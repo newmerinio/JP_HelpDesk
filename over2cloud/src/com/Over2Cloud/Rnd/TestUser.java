@@ -20,6 +20,9 @@ public class TestUser {
 	public static void main(String[] args) throws Exception 
 	{
 		System.out.println("User Name===="+Cryptography.encrypt("Varsha", DES_ENCRYPTION_KEY));
+		
+		
+		System.out.println(" ikhdhasgjkdsgj   ");
 		/*System.out.println("User Name   "+Cryptography.decrypt("Y0oeOY38MdI=", DES_ENCRYPTION_KEY));
 		System.out.println("Password  "+Cryptography.decrypt("T5xI6PkLM9k=", DES_ENCRYPTION_KEY));
 		
