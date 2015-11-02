@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="wfpmSalary" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/Salary">
+	
+		<action name="beforeAttendance" class="com.Over2Cloud.ctrl.wfpm.salary.Attendance">
+			<result name="success">/view/Over2Cloud/WFPM/Salary/attendanceGrid.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		<action name="empInformation"  class="com.Over2Cloud.ctrl.wfpm.salary.Attendance" method="getAttendanceInfo">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="editEmpInformation"  class="com.Over2Cloud.ctrl.wfpm.salary.Attendance" method="editAttendanceInfo">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     	</action>
+		
+		<action name="beforeSalaryConfig"  class="com.Over2Cloud.ctrl.wfpm.salary.SalaryAction">
+			<result name="success">/view/Over2Cloud/WFPM/Salary/salaryConfig.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="saveSalaryConfig"  class="com.Over2Cloud.ctrl.wfpm.salary.SalaryAction" method="saveSalaryConfigInfo">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		
+		<action name="beforeCalculation"  class="com.Over2Cloud.ctrl.wfpm.salary.SalaryAction" method="beforeSalaryCalculation">
+			<result name="success">/view/Over2Cloud/WFPM/Salary/viewSalary.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+    
+    	<action name="calculateSalary"  class="com.Over2Cloud.ctrl.wfpm.salary.SalaryAction" method="calculateSalaryInfo">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     	</action>
+		
+	</package>
+</struts>

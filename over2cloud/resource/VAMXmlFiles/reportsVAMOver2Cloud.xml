@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+
+<package name="vamReports" extends="struts-default,json-default" namespace="/view/Over2Cloud/VAM/reports">
+
+	 <action name="visitorreportmenuview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorReportMenuView">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitorallreport.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="visitorRepoerview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorDetailsForReport">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="modifyVisitorReportGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="editVisitorReportGrid">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforevisitorreportview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeVisitorReportDetailsView">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitrorsearch.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="visitorSearch"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="VisitorReportDetailsData">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitrorsearchview.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="visitorSearchReport"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="getVisitorReportData">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="visitorphotosearchview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorPhotoReportWithDetails">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitrorphotosearch.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="scheduledvisitorreport"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="scheduledVisitorGrid">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/scheduledvisitorview.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="scheduledprerequestview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="getScheduledPrerequestview">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyScheduledVisitorGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyScheduledVisitorGrid">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="visitorInOut"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorMovementsGrid">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitormovementreport.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="visitormovementView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorMovementDataView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyVisitorMovementGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="editVisitorMovementGrid">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="visitorIn"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorINGrid">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitorInview.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="visitorINView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorInView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyVisitorIN"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyVisitorIN">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="visitorOut"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorOutGrid">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/visitoroutview.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="visitorOutView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorOutView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyVisitorOut"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyVisitorOut">
+            	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="jsonGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="getVisitorRecord">
+            	<result name="success" type="json"><param name="root"></param></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeinstantVisitorAdd"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeInstantVisitorView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/instantvisitorView.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="instantvisitorView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="instantVisitorView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyinstantvisitor"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyInstantVisitor">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="instantvisitaction"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="instantVisitActionAdd">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/instantvisitAction.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="instantvisitactionsubmit"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="instantVisitActionSubmit">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="beforeVisitorReportView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeVisitorReportView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/visreportForNormalEmpView.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforevisitormisgridview"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeVisitorMISView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/visitormisgridview.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="visitorMisdetail"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorMisView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyVisitormisGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="editVisitorMISGrid">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="visitorReportNUser"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="visitorReportView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="modifyvisitorReportNUser"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyVisitorReport">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforepostAckreportView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforePostAckReportView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/postackRepNormalEmpView.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="postacknowledgeNView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="postAckReportNUserView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="modifypostacknowledgeGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyPostAckReportView">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforevehiclemisgridview"  class="com.Over2Cloud.ctrl.VAM.VehicleReports.AllVehicleReports" method="beforeVehicleMISView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/vehiclemisgridview.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="vehiclemisdetail"  class="com.Over2Cloud.ctrl.VAM.VehicleReports.AllVehicleReports" method="vehicleMisView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="modifyvehiclemisGrid"  class="com.Over2Cloud.ctrl.VAM.VehicleReports.AllVehicleReports" method="editVehicleMISGrid">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+     <action name="modifyVehiclesearchGrid"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifyVehiclesEntryGrid">
+            	<result name="success">/view/Over2Cloud/VAM/Vehicle/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeproductivityreport"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeProductivityReport">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/productivityView.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="productivityreportView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="productivityReportView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="summaryrepdataView"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="beforeSummaryReportView">
+	     <result name="success">/view/Over2Cloud/VAM/VAMReports/summaryreportview.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+		 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="summaryrepdata"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="summaryReportView">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="modifysummaryreportdata"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="modifySummaryReport">
+	      <result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="addsummaryrepData"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="addSummaryRepDetail">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/summarydataAdd.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <action name="summarydataSubmit"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="submitSummaryData">
+    	<result name="success">/view/Over2Cloud/VAM/VAMReports/success.jsp</result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+     <!-- <action name="loadGateName"  class="com.Over2Cloud.ctrl.VAM.VisitorReports.AllVisitorReport" method="getGateDetail">
+    	<result name="success" type="json"><param name="root">jsonArray</param></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action> -->
+	</package>
+</struts>

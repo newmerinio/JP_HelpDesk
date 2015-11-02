@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="cpsmasters" extends="struts-default,json-default" namespace="/view/Over2Cloud/CorporatePatientServices/cpservices">
+    <!-- Corporate Master work ankit 2015 (CorporatePatientServices.xml) -->
+    	
+			<action name="viewCorporateHeader" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="viewCorporateHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadCorporate.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddCorporate" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="beforeAddCorporate">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeCorporateAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addCorporateDetails" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="addCorporateDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewCorporateDetails" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="viewCorporateDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewCorporateDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewCorporateData" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="viewCorporateData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 		<action name="editCorporateDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="editCorporateDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	
+    	<!-- Corporate Package Master work ankit 2015 -->
+    	
+			<action name="viewPackageHeader" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="viewPackageHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadPackage.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddPackage" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="beforeAddPackage">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforePackageAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addPackageDetails" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="addPackageDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewPackageDetails" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="viewPackageDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewPackageDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewPackageData" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="viewPackageData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editPackageDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="editPackageDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	 <action name="getCityList" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="getCityList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+
+
+
+    	 <action name="getCorpList" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="fetchCorpList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+    	
+    	<!-- Corporate CPS Package Master work ankit 2015 -->
+    	
+    	<action name="getCityList" class="com.Over2Cloud.ctrl.cps.corporate.CorporateMasterAction" method="getCityList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+
+
+
+    	 <action name="getCorpList" class="com.Over2Cloud.ctrl.cps.corporate.Package" method="fetchCorpList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+			<action name="viewPackageMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="viewPackageMasterHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadPackageMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddPackageMaster" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="beforeAddPackageMaster">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforePackageMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addPackageMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="addPackageMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewPackageMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="viewPackageMasterDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewPackageMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewPackageMasterData" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="viewPackageMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editPackageMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.PackageMaster" method="editPackageMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	<!-- Corporate CPS Service Master work ankit 2015 -->
+    	
+			<action name="viewServiceMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="viewServiceMasterHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadServiceMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddServiceMaster" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="beforeAddServiceMaster">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeServiceMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addServiceMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="addServiceMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewServiceMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="viewServiceMasterDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewServiceMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewServiceMasterData" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="viewServiceMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editServiceMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ServiceMaster" method="editServiceMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	<!-- Corporate CPS Speciality Master work ankit 2015 -->
+    	
+			<action name="viewSpecialityMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="viewSpecialityMasterHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadSpecialityMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddSpecialityMaster" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="beforeAddSpecialityMaster">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeSpecialityMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addSpecialityMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="addSpecialityMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewSpecialityMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="viewSpecialityMasterDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewSpecialityMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewSpecialityMasterData" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="viewSpecialityMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editSpecialityMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="editSpecialityMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	    	 <action name="fecthLocList" class="com.Over2Cloud.ctrl.cps.corporate.SpecialityMaster" method="fetchLocList" >
+ 		 <result name="success" type="json"><param name="root">countrys</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+    	
+    	
+    	<!-- Corporate CPS USGServices Master work ankit 2015 -->
+    	
+			<action name="viewUSGServicesMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="viewUSGServicesMasterHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadUSGLabMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddUSGServicesMaster" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="beforeAddUSGServicesMaster">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeUSGServicesMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addUSGServicesMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="addUSGServicesMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewUSGServicesMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="viewUSGServicesMasterDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewUSGServicesMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewUSGServicesMasterData" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="viewUSGServicesMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editUSGServicesMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.USGServicesMaster" method="editUSGServicesMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	
+    	<!-- Corporate Manage Doctor Schedule Master work ankit 2015 -->
+    
+			<action name="viewDocScheduleHeader" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="viewDocScheduleHeader">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeHeadDocSchedule.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddDocSchedule" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="beforeAddDocSchedule">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/beforeDocScheduleAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addDocScheduleDetails" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="addDocScheduleDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewDocScheduleDetails" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="viewDocScheduleDetails">
+            <result name="success" >/view/Over2Cloud/CorporatePatientServices/Masters/viewDocScheduleDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewDocScheduleData" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="viewDocScheduleData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editDocScheduleDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="editDocScheduleDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	 <action name="fetchSerivceList" class="com.Over2Cloud.ctrl.cps.corporate.DocScheduleMaster" method="fetchSerivceList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    
+</package>
+
+</struts>

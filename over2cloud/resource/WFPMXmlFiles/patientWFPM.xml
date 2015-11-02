@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="Patient" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/Patient">
+     <!-- TAT configuration on patient activity master by manab -->
+     
+     <action name="nxxtLevelEscnext" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="nextEscMap4Emp">
+         <result name="success" >/view/Over2Cloud/WFPM/Patient/onChangeEsclation.jsp</result>
+          <result name="lsuccess" >/view/Over2Cloud/WFPM/Patient/onChangeLEmployee.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   
+   <action name="nxxtLevelEscLst" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="nextEscMap4Emp">
+         <result name="success" >/view/Over2Cloud/WFPM/Patient/onChangeEsclationlast.jsp</result>
+          <result name="lsuccess" >/view/Over2Cloud/WFPM/Patient/onChangeLEmployee.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   
+   <action name="nxxtLevelEscLst2" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="nextEscMap4Emp">
+         <result name="success" >/view/Over2Cloud/WFPM/Patient/onChangeEsclationlastLevel.jsp</result>
+          <result name="lsuccess" >/view/Over2Cloud/WFPM/Patient/onChangeLEmployee.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   <!-- end  -->
+    
+      <action name="beforePatientStatus"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforePatientStatus" >
+             <result name="success">/view/Over2Cloud/WFPM/Patient/beforePatientView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="searchpatientStatusdata"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforePatientStatus" >
+             <result name="success">/view/Over2Cloud/WFPM/Patient/patientStatusView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewPatientStatusGrid" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction"
+			method="viewPatientStatusGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+	
+    	<action name="beforeTakeActionPreventive" class="com.Over2Cloud.ctrl.wfpm.patient.PatientPreventiveAction" method="beforeTakeActionPreventive">
+			<result name="success">/view/Over2Cloud/WFPM/Patient/clientTakePreventiveaction.jsp</result>
+			<result name="crActivityFullView">/view/Over2Cloud/WFPM/Patient/clientTakePreventiveactionFullView.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		
+		 <action name="fetchLastStatusForOffering" class="com.Over2Cloud.ctrl.wfpm.patient.PatientPreventiveAction" method="fetchLastStatusForOffering">
+             <result name="success" type="json"><param name="status">status</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+		
+		<action name="takePreventiveActionOnClient" class="com.Over2Cloud.ctrl.wfpm.patient.PatientPreventiveAction"
+			method="takePreventiveActionOnClient">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		<action name="beforeStatusAdd"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeStatusAdd" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/patientStatusAdd.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+
+		<action name="fetchAllActivity" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="fetchAllActivity">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+		</action>
+			     	
+     	<action name="fetchRhSubType"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="fetchRhSubType" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/viewRelationshipSubType.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     
+       <action name="addPatientStatus" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addPatientStatus" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		 <action name="beforeEditPatientForm"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeEditPatientForm" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/editBasicPatient.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+       	
+       	<action name="updatePatientBasicForm" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="updatePatientBasicForm" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		
+   		  
+<!-- Corporate work ankit 2015 -->
+
+
+   <action name="corpBasicDetails"  class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="corpBasicDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/orgClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+
+			<action name="viewCorporateHeader" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="viewCorporateHeader">
+            <result name="success" >/view/Over2Cloud/WFPM/corporate/beforeHeadCorporate.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddCorporate" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="beforeAddCorporate">
+            <result name="success" >/view/Over2Cloud/WFPM/corporate/beforeCorporateAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addCorporateDetails" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="addCorporateDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewCorporateDetails" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="viewCorporateDetails">
+            <result name="success" >/view/Over2Cloud/WFPM/corporate/viewCorporateDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewCorporateData" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="viewCorporateData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 		<action name="editCorporateDataGrid" class="com.Over2Cloud.ctrl.wfpm.corporate.CorporateMasterAction" method="editCorporateDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <!--	 for patient basic data	  starts-->
+   		  <action name="beforeviewPatient"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeviewPatient" >
+             <result name="success">/view/Over2Cloud/WFPM/Patient/beforePatientBasicView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+	      <action name="searchpatientBasicdata"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeviewPatient" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/patientBasicView.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+	     <action name="viewPatientBasicGrid" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction"
+				method="viewPatientBasicGrid">
+				<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp
+				</result>
+			</action>
+			
+			<action name="patientBasicAdd"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="patientBasicAdd" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/patientBasicAdd.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     
+       	<action name="addPatientBasicForm" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addPatientBasicForm" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		 <action name="beforePatientActivity"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforePatientActivity" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/patientManageActivity.jsp</result>
+            <result name="followup">/view/Over2Cloud/WFPM/Patient/patientFollowupActivity.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="addNewOffering"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addNewOffering" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/patientManageActivity.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="fetchSubOfferingData" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="fetchSubOfferingData">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+		</action>
+     	
+     	<action name="fetchAllOfferingDetails" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="fetchAllOfferingDetails">
+			<result name="success" type="json">
+				<param name="root">jsonArray</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+     	
+     	 <action name="beforePatientVisit"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforePatientVisit" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/beforePatientVisit.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+   		 
+   		  <action name="followupActivity"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="followupActivity" >
+            <result name="success">/view/Over2Cloud/WFPM/Patient/followupActivity.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+   		 
+   		 <action name="checkFollowupActivity" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="checkFollowupActivity">
+	            <result name="success" type="json">
+				<param name="jsonObject">jsonObject</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+   		 
+   		 
+   		  <!--	 for patient basic data	  ends-->
+   		  
+   		   <!--	 for patient Visit Activity	  Starts-->
+   		   
+   		   <action name="fetchVisitHistoryOffering" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="fetchVisitHistoryOffering">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+			</action>
+			
+   		   <action name="fetchAllDetailsOffering" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="fetchAllDetailsOffering">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+			</action>
+			
+			<action name="fetchDetailsOffering" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="fetchDetailsOffering">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+			</action>
+			
+			 <action name="fetchAllActivityDetails" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="fetchAllActivityDetails">
+           	 	<result name="success" >/view/Over2Cloud/WFPM/Patient/patientActivityHistory.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+			
+       		 <action name="viewVisitheader" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="viewVisitHeader">
+           	 	<result name="success" >/view/Over2Cloud/WFPM/Patient/VisitActivity/visitActivityBoard.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="fetchVisitActivityList" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchVisitColList">
+	            <result name="success" type="json">
+				<param name="dataArray">dataArray</param>
+				<param name="currDate">currDate</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+       		 
+       		 <action name="fetchDataVisitActivity" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchDataVisitActivity">
+	            <result name="success" type="json">
+				<param name="dataArray">dataArray</param>
+				<param name="currDate">currDate</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+	        
+	        <action name="fetchOfferingList" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchOfferingList">
+	            <result name="success" type="json"><param name="root">jsonArray</param>
+				</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+	        
+	        <action name="fetchMissedVisitActivity" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchMissedVisitActivity">
+	            <result name="success" type="json">
+				<param name="dataArray">dataArray</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+	        
+	         <action name="fetchVisitFeedbackData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchVisitFeedbackData">
+            <result name="success" type="json">
+					<param name="dataArray">dataArray</param>
+				</result>
+			<result name="login">/view/invalidSession.jsp</result>
+	       </action>
+	       
+	        <action name="fetchVisitHistoryData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchVisitHistoryData">
+            <result name="success" type="json">
+					<param name="dataArray">dataArray</param>
+				</result>
+			<result name="login">/view/invalidSession.jsp</result>
+	       </action>
+	       
+	        <action name="patientProfileData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="patientProfileData">
+             <result name="success">/view/Over2Cloud/KRAKPIOver2cloud/KPIDetails.jsp</result>
+         	<result name="login">/view/invalidSession.jsp</result>
+	       </action>
+	       
+	       <action name="fetchOfferingLevelData" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction"
+			method="fetchOfferingLevelData">
+			<result name="success" type="json">
+				<param name="root">jsonArray</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+
+		<action name="addFirstStatus" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addFirstStatus" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action> 
+	       
+	    <action name="addFirstActivity" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivity" method="addFirstActivity" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>   
+       		  <!--	 for Visit Activity data	  ends-->
+       		  
+       		   <!--	 for relationship Mgr  data	  starts--> 
+       		    <action name="beforeviewManager"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeviewManager" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/beforeRelMgrView.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	     		</action>
+		      <action name="searchrelMgrdata"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeviewManager" >
+		             <result name="success">/view/Over2Cloud/WFPM/Patient/relManagerView.jsp</result>
+					 <result name="login">/view/invalidSession.jsp</result>
+		     </action>
+		     <action name="viewrelMgrGrid" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction"
+				method="viewrelMgrGrid">
+				<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp
+				</result>
+			</action>
+			
+			 <action name="addRelationshipMgr"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addRelationshipMgr" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/addRelationshipMgr.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	     		</action>
+	     		
+	     		  <action name="relationshipMgrSave" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="relationshipMgrSave" >
+		           <result name="success">/view/success.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+		   		 </action>
+		   		 
+		   		  <action name="fetchEmployeeData" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction"
+					method="fetchEmployeeData">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+				</action>
+				
+				<action name="nxxMytLevelEscnext" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="nxxMytLevelEscnext">
+					<result name="success" type="json">
+						<param name="root">jsonArray</param>
+					</result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+		</action>
+       		   <!--	 for Visit Activity data	  ends-->
+       		  
+       		 <!-- Mapping Doctors with Offering starts -->
+       		   
+       		    <action name="beforeDoctorOfferingMap"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeDoctorOfferingMap" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/beforeDoctorOfferingMap.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	     		</action>
+		      <action name="searchMapDoctorOffdata"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeDoctorOfferingMap" >
+		             <result name="success">/view/Over2Cloud/WFPM/Patient/doctorOfferingMapView.jsp</result>
+					 <result name="login">/view/invalidSession.jsp</result>
+		     </action>
+		     <action name="viewrMapDoctorOffdataGrid"
+	class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="viewrMapDoctorOffdataGrid">
+				<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp
+				</result>
+			</action>
+			
+			<action name="addDocOffering"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addDocOffering" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/addDocOffering.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	     		</action>
+	     		
+	     		  <action name="addDocOfferingSave" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="addDocOfferingSave" >
+		           <result name="success">/view/success.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+		   		 </action>
+       		   <!-- Mapping Doctors with Offering Ends -->
+       		   
+       		   <!-- wellness report start -->
+       		   
+       		    <action name="beforewellnessreport"  class="com.Over2Cloud.ctrl.wfpm.wellness.WellnessAction" method="beforewellnessreport" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/beforewellnessreport.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	     		</action>
+		      <action name="searchwellnessReportdata"  class="com.Over2Cloud.ctrl.wfpm.wellness.WellnessAction" method="beforewellnessreport" >
+		             <result name="success">/view/Over2Cloud/WFPM/Patient/wellnessreportView.jsp</result>
+					 <result name="login">/view/invalidSession.jsp</result>
+		     </action>
+		     <action name="viewWellnessReportDataGrid" class="com.Over2Cloud.ctrl.wfpm.wellness.WellnessAction"
+				method="viewWellnessReportDataGrid">
+				<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp
+				</result>
+			</action>
+       		   <!-- wellness report end -->
+       		 <action name="resendQuestions" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="resendQuestions" >
+		           <result name="success">/resend.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+		   		 </action> 
+		   		 
+		   		 <action name="beforeprofileView" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeprofileView" >
+		           <result name="success">/view/Over2Cloud/WFPM/Patient/profileView.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+		   		 </action> 
+		   		  <action name="beforeEditPatientProfile" class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="beforeEditProfile" >
+		           <result name="success">/view/Over2Cloud/WFPM/Patient/editPatientProfile.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+		   		 </action> 
+		   		 <action name="modifyProfileTable"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="modifyPatientProfile">
+               <result name="success">/view/success.jsp</result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="patientAddBasicDetails"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="patientAddBasicDetails" >
+	             <result name="success" type="json"><param name="root">profilemap</param></result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     
+     
+       <action name="patientBasicDetails"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="patientBasicDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/patientClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+	    <action name="questionSentDetails"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="questionSentDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/Patient/questionSentDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+      <action name="modifyPatientGrid"  class="com.Over2Cloud.ctrl.wfpm.patient.PatientAction" method="modifyPatientGrid">
+            	 <result name="success">/view/success.jsp</result>
+		           <result name="error" >/view/error.jsp</result>
+		           <result name="login">/view/common_pages/invalidSession.jsp</result>
+     </action>
+		   		 
+</package>
+
+
+
+<package name="PatientActivityDashboard" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/PatientActivityDashboard">
+     
+     <action name="patientActivityDashboard" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="beforeDashboardAction">
+         <result name="success" >/view/patientActivity/PatientActivityDashboard/PatientActivitDashboard.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   <action name="getDashboardBlockData" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getDashboardBlockData">
+         <result name="success" >/view/patientActivity/PatientActivityDashboard/dashbaorBlockData.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+    <action name="getDashboardOfferingsChart" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getDashboardOfferingsChart">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   
+     <action name="getVerticalDetails" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getVerticalDetails">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+    <action name="getNextActivityDetails" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getNextActivityDetails">
+         <result name="success">/view/patientActivity/PatientActivityDashboard/NextActCounter.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   
+   <action name="getDashboardLead" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getDashboardLead">
+         <result name="success">/view/patientActivity/PatientActivityDashboard/LeadBoard.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+		   		 
+   <action name="getJsonDataForLeadStage" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForLeadStage">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+   
+   <action name="upcomingActivities" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="upcomingActivities">
+         <result name="success">/view/patientActivity/PatientActivityDashboard/upComingActivityBoard.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   <action name="upcomingActivitiesView" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="upcomingActivitiesView">
+         <result name="success" type="json"></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+    <action name="getJsonDataForLeadSource" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForLeadSource">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+   
+   <action name="getJsonDataForLeadOffering" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForLeadOffering">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+   
+   <action name="getJsonDataForDueActivity" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForDueActivity">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+   <action name="getJsonDataForDueOwner" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForDueOwner">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+   
+   <action name="getJsonDataForDomesticQry" class="com.Over2Cloud.ctrl.wfpm.patient.PatientActivityDashboardAction" method="getJsonDataForDomesticQry">
+         <result name="success" type="json"><param name="root">jsonArr</param></result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+		   		 
+</package>
+</struts>

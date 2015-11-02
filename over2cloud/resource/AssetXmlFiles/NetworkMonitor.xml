@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true"/>
+	<package name="NetworkMonitor" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor">
+	
+		<action name="CreateNetworkMonitorAddPage" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="createNetMontorPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/CreateNetworkMonitor.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="AddIpPort" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="AddIpPort">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewNetworkMonitor" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="beforeViewNetworkMonitor">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/ViewNetworkMonitor.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewNetworkMonitorData" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="ViewNetworkMonitor">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="beforeViewNetworkMonitorLog" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="beforeViewNetworkMonitorLog">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/ViewNetworkMonitorLog.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewNetworkMonitorLog" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="ViewNetworkMonitorLog">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="beforeViewMachineDetails" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="beforeViewMachineDetails">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/ViewMachineDetails.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewMachineDetails" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="ViewMachineDetails">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="viewPartitaion" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="viewPartitaionDetails">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/viewPartitaion.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="viewSoftwareInventory" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="viewSoftwareInventory">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/viewSoftwareInventory.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="CreateProcessRestrictionAddPage" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="createProcessRestrictionPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/CreateRestrictedExe.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	
+		<action name="AddRestrictedExe" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="AddRestrictedExe">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="beforeViewRestrictedExe" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="beforeViewRestrictedExe">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/ViewRestrictedExe.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewRestrictedExe" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="ViewRestrictedExe">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	
+		<action name="getRestrictedExe" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="getRestrictedExe">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/viewSoftwareInventory.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="CreateConfigServiceAlert" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="CreateConfigServiceAlert">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/CreateServiceAlert.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="configServiceAlert" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="configServiceAlert">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	
+		<action name="beforeViewServiceAlert" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="beforeViewServiceAlert">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/NetworkMonitor/ViewServiceAlert.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="ViewServiceAlert" class="com.Over2Cloud.ctrl.asset.NetworkMonitor.NetworkMonitorAction" method="viewServiceAlert">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

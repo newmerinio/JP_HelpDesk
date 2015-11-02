@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="dar" extends="struts-default,json-default" namespace="/view/Over2Cloud/DAROver2Cloud">
+
+      <action name="beforeAllotTask"  class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="beforeAddAllotTask">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createTaskAllot.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="beforeAddAction"  class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="beforeAddTask">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createTaskRegistration.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      <action name="beforeDarAddAction"  class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="beforeAddDar">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createDarLoginPage.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="getAllotedByData" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getAllotedByData">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getClientValueData" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getClientValueData">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="getOfferingData" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getOfferingData">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="getProjectNames" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getProjectNames">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforeDarValidate"  class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="beforeDarValidate">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createDarValidatePage.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="dashboardAction"  class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="beforeDashboardAction">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createDashboardActionPage.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="beforeTaskTypeAddAction"  class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction" method="beforeAddTaskType">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createTaskType.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="addTasktypeRegis"  class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction" method="taskTypeAdd">
+         	    <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="addTaskRegis"  class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="taskRegistrationAdd">
+                <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="addDarRegis"  class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="darSubmissionAdd">
+               <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="beforeClientAddAction"  class="com.Over2Cloud.ctrl.dar.client.ClientData" method="beforeAddClientType">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/createclient.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action> 
+      
+      <action name="addclientRegis"  class="com.Over2Cloud.ctrl.dar.client.ClientData" method="clientAdd">
+               <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+       <action name="clientView"  class="com.Over2Cloud.ctrl.dar.client.ClientData" method="beforeClientView">
+               <result name="success">/view/Over2Cloud/DAROver2Cloud/clientView.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+     	<action name="clientGridDataView" method="viewClientOperation" class="com.Over2Cloud.ctrl.dar.client.ClientData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		<action name="modifyClientGrid" method="modifyClient" class="com.Over2Cloud.ctrl.dar.client.ClientData">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="deleteClientGrid" method="modifyClient" class="com.Over2Cloud.ctrl.dar.client.ClientData">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="taskView" method="beforeTaskView" class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction">
+			 <result name="success">/view/Over2Cloud/DAROver2Cloud/taskTypeView.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="taskGridDataView" method="viewTaskOperation" class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="modifyTaskGrid" method="modifyTask" class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="deleteTaskGrid" method="modifyTask" class="com.Over2Cloud.ctrl.dar.tasktype.TaskTypeAction">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+          
+          <action name="taskRegistrationView" method="beforeTaskView" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction">
+		    <result name="success">/view/Over2Cloud/DAROver2Cloud/viewTaskRegistration.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		 <action name="taskResgistrationGridDataView" method="viewtaskRegisOperation" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		 </action>
+	
+		<action name="modifyTaskRegisData" method="modifyTaskRegistration" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+        <action name="darView" method="beforeDarView" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission">
+			    <result name="success">/view/Over2Cloud/DAROver2Cloud/viewDarSubmission.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	    </action>
+		<action name="darGridDataViewDetails" method="viewDarSubmission" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		<action name="beforeProjectManagementAddAction"  class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement" method="beforeAddProjectType">
+	           <result name="success">/view/Over2Cloud/DAROver2Cloud/createProjectManagement.jsp</result>
+			   <result name="error">/view/error.jsp</result>
+			   <result name="login">/view/invalidSession.jsp</result>
+       </action>
+		<action name="addMangementRegis"  class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement" method="projectManagementAdd">
+                <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+		<action name="managementView" method="beforeView" class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement">
+		   	    <result name="success">/view/Over2Cloud/DAROver2Cloud/viewProjectManag.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		<action name="projectGridDataView" method="viewProjectOperation" class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		<action name="modifyProjectData" method="modifyProjectManagement" class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		<action name="deleteProjectData" method="modifyProjectManagement" class="com.Over2Cloud.ctrl.dar.projectmanagement.ProjectManagement">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		   <action name="checkClient" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getClientDataFrom" >
+            <result name="success" type="json"><param name="root">taskObj</param></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getProjectData" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getProjectData" >
+            <result name="success" type="json"><param name="root">taskObj</param></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+     
+     	   <action name="checkDash" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getClientDataFrom" >
+            <result name="success" type="json"><param name="root">taskObj</param></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+           </action>
+     
+      <action name="getAttachment" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getAttachmentdownload" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/attachmentdownload.jsp</result>
+            <result name="notfound">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+      <action name="getAttachmentTask" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getAttachmentdownloadForTask" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/attachmentForTask.jsp</result>
+            <result name="notfound">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+
+     <action name="download"  class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="download" >
+             <result name="download" type="stream">
+      		<param name="contentType">application/octet-stream</param>
+      		<param name="inputName">fileInputStream</param>
+      		<param name="contentDisposition">attachment;filename=%{fileName}</param>
+      		<param name="bufferSize">4096</param>
+    	    </result>
+    	<result name="login">/view/common_pages/invalidSession.jsp</result>
+    	<result name="error">/view/common_pages/error.jsp</result>
+        <result name="success">/view/success.jsp</result>
+      </action>
+      
+      <action name="checkPendingDetail" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="beforeTaskView" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/pendingtask.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="pendingView" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getDetailOfPendingTask" >
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	
+        <action name="addsnoozeTask" method="updateTaskDetail" class="com.Over2Cloud.ctrl.dar.submission.SnoozeTakeAction">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+        <action name="snoozeTaskAction" class="com.Over2Cloud.ctrl.dar.submission.SnoozeTakeAction" method="snoozeAction">
+		<result>/view/Over2Cloud/DAROver2Cloud/snoozeTaskAction.jsp</result>
+		</action>
+		
+		 <action name="validationDAR" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="getValidationDetail" >
+            <result name="success" type="json"><param name="root">darObj</param></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+		
+		    <action name="addDarFormValidation" method="updateDarValidation" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		 <action name="dashboard" method="getData4ProjectDashboard" class="com.Over2Cloud.ctrl.dar.task.ProjectDashboardAction">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/darDashoboard.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		 </action>
+		 <action name="getDashBoardTask" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="beforeDarDashboardtask" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/dashboardDetail.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+		  <action name="dashboardView" method="getGridDetail" class="com.Over2Cloud.ctrl.dar.submission.DarSubmission">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		 <action name="beforeDashAddAction"  class="com.Over2Cloud.ctrl.dar.submission.DarSubmission" method="beforeAddDar">
+          <result name="success">/view/Over2Cloud/DAROver2Cloud/darSubmissionDashboard.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+      </action>
+	
+		  <action name="productivitySearch" method="beforeAddTask" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/productivity_Sheet.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		 </action>
+		    <action name="checkDashDetail" class="com.Over2Cloud.ctrl.dar.submission.ProductivitySheet" method="beforeDarViewtask" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/productivitySheet.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+          </action>
+        <action name="productivityView" class="com.Over2Cloud.ctrl.dar.submission.ProductivitySheet" method="viewProductivityRegisOperation" >
+			<result name="success" type="json"></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+		
+        <action name="updateComment" class="com.Over2Cloud.ctrl.dar.submission.SnoozeTakeAction" method="updateProductivity" >
+			<result name="success">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+		 <action name="getDashBoardProductivity" class="com.Over2Cloud.ctrl.dar.submission.ProductivitySheet" method="beforeDarViewtask" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/productivitySheet.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       <action name="currentColumn" class="com.Over2Cloud.ctrl.dar.submission.ProductivitySheet" method="getColumn4Download">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/download_productivitySheet.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+
+		<action name="downloadActionProject" class="com.Over2Cloud.ctrl.dar.submission.ProductivitySheet" method="downloadExcel">
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+			<param name="contentDisposition">attachment; filename="${excelFileName}"</param>
+			<param name="bufferSize">1024</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		 <action name="beforeReport" class="com.Over2Cloud.ctrl.dar.submission.SnoozeTakeAction" method="reportdata" >
+			<result name="success">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="beforeDarReport" class="com.Over2Cloud.ctrl.dar.report.ReportActionDAR" method="beforeReportView">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/ReportDAR/viewDARReport.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+	  
+	   <action name="reportGridDataView" class="com.Over2Cloud.ctrl.dar.report.ReportActionDAR" method="viewDARReportData" >
+			<result name="success" type="json"></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+          <action name="reportGridDataView" class="com.Over2Cloud.ctrl.dar.report.ReportActionDAR" method="viewDARReportData" >
+			<result name="success" type="json"></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="beforeReportViewData" class="com.Over2Cloud.ctrl.dar.report.ReportActionDAR" method="getColumn4DarReport">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/ReportDAR/reportGridView.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+	  
+	   <action name="beforeDarProductivity" class="com.Over2Cloud.ctrl.dar.productivity.ProductivityAction" method="getProductivityDAR">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/Productivity/beforeProductivtyHeader.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+	  
+	  <action name="beforeActivityBoard" class="com.Over2Cloud.ctrl.dar.productivity.ProjectActivityBoard" method="beforeActivityBoard">
+			<result name="success">/view/Over2Cloud/DAROver2Cloud/ActivityBoard/activityBoardMain.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+	   <action name="getClientContactPerson" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getClientContactPersonName">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getClientContactPersonOnChange" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getClientContactPersonNameOnChange">
+			<result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/onChangeCCPerson.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	  </action>
+     
+      <action name="getClientContactPersonCC" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="getClientContactPersonNameCC">
+          <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/onChangeCCPerson.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+	  
+	  	 <action name="beforeTaskDetails" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="fetchTaskCompleteDetails" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/task/taskDetails.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="allotTask" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="allotTask" >
+            <result name="success">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+        <action name="beforeFromKR" class="com.Over2Cloud.ctrl.dar.task.TaskRegistrationAction" method="fromKR" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/task/KRFromDetails.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+       <action name="beforeMainActivity" class="com.Over2Cloud.ctrl.dar.activityBoard.ActivityBoardDAR" method="beforeMainPage" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/ActivityBoard/beforeActivityBoard.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+       
+        <action name="activityData" class="com.Over2Cloud.ctrl.dar.activityBoard.ActivityBoardDAR" method="activityData" >
+            <result name="success">/view/Over2Cloud/DAROver2Cloud/ActivityBoard/activityBoardDAR.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+       
+       
+        <action name="activityBoardGridView" class="com.Over2Cloud.ctrl.dar.activityBoard.ActivityBoardDAR" method="activityBoardGridView" >
+			<result name="success" type="json"></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+</package>
+
+</struts>

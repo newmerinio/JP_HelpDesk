@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="Activity_Planner" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/ActivityPlanner">
+	
+    <action name="mainpageShow" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" >
+	            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/mainPageShow.jsp</result>
+	            <result name="error">/view/error.jsp</result>
+	            <result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+     <action name="getHolidayes" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="getHolidayes">
+	            <result name="success" type="json" ><param name="root">commonJsonArr</param></result>
+	            <result name="error">/view/error.jsp</result>
+	            <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchActivityEvent" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="fetchActivityEvent">
+	            <result name="success" type="json" ><param name="root">commonJsonArr</param></result>
+	            <result name="error">/view/error.jsp</result>
+	            <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="approveRequest" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="approveRequest">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+     <action name="approvedsrRequest" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="approvedsrRequest">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     <action name="beforeActivityPlanner" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="beforeActivityPlanner">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/createActivityPlanner.jsp</result>
+            <result name="request" >/view/Over2Cloud/WFPM/ActivityPlanner/createActivityPlan.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+   
+     <action name="fetchTerritory"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerHelper" method="fetchTerritory">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="fetchRelationSubType"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerHelper" method="fetchRelationSubType">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+		   
+		 <action name="fetchActivityTypeEvent"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerHelper" method="fetchActivityTypeEvent">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchEmpList"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerHelper" method="fetchEmpList">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchActivityFor" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerHelper" method="fetchActivityFor">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/activityFor.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+     </action>
+   		
+   	 <action name="addActivity" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlannerAction" method="addActivity">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+      <action name="beforeActivityPlan" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeActivityPlan">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/createActivityPlan.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="addActivityPlan" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="addActivityPlan">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+       <action name="beforeViewActivityPlan" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeViewActivityPlan">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/viewActivityPlan.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewActivityPlan"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="viewActivityPlan">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="activityPlanManagerAction" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/activityPlanManager.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+      
+      <action name="addActivityPlanManagerStatus" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="addActivityPlanManagerStatus">
+             <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+        <action name="beforeApproveActivity" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityApprovalAction" method="beforeApproveActivity">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/createActivityApprove.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="addActivityApproval" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityApprovalAction" method="addActivityApproval">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+     
+     <action name="checkpassedSchedule" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="checkpassedSchedule">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/createActivityPlan.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="changeDate" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="changeDate">
+           <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="changeDateApproval" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="changeDateApproval">
+           <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+       <action name="beforeActivityTotalGrid" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityApprovalAction" method="beforeActivityTotalGrid">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/activityTotalView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewTotalTask"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityApprovalAction" method="viewTotalTask">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+       <action name="beforeActivityViewHeader" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeActivityViewHeader">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/viewActivityViewHeader.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeActivityView" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeActivityView">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/viewActivityView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="beforeActivityPlannerFullView" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeActivityViewHeader">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/fullViewActivityHeader.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+        
+      <action name="beforeActivityPlannerFullViewMain" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="beforeActivityView">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/fullViewActivity.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="viewActivity"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="viewActivity">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="viewActivityFull"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="viewActivityFull">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+        <action name="deadLineDisplay" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" method="deadLineDisplay">
+           <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <!-- DSR Part -->
+     
+     <action name="beforeDSRFillAdd" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="beforeDSRFillAdd">
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/createDsrFill.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+        <action name="addDsr" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="addDsr">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+         <action name="beforeDCRDisapprove" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="beforeDCRDisapprove">
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/createDsrDisapprove.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="addDsrApproval" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="addDsrApproval">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+      <action name="beforeDSRFillView" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="beforeDSRView">
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/beforeDSRFillView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="dsrViewGrid"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="dsrViewGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="dsrViewGridFull"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="dsrViewGridFull">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforeDSRFillFullView" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="beforeDSRView">
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/beforeDSRFillFullView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+       <action name="beforeViewExpense" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/beforeViewExpense.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+     <action name="dsrExpenseView"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="dsrExpenseView">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="beforeViewExpenseEdit" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/beforeViewExpenseEdit.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+    
+       <action name="editExpenseDSR" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="editExpenseDSR">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+     <action name="dsrExpenseViewEdit"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="dsrExpenseViewEdit">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforeDSRDisapprove"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="beforeDSRDisapprove">
+            <result name="success" >/view/Over2Cloud/WFPM/DSRFill/dsrDisapprove.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="dsrViewDisapprve"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.DSRFillAction" method="dsrViewDisapprve">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <!-- End DSR Part -->
+      
+       <!-- Accounts Part -->
+     <action name="beforeAccountsPage" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction" method="beforeAccountsPage">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Accounts/createAccountsPage.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="beforeAccountsView" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction" method="beforeAccountsView" >
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Accounts/beforecreateAccountsView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="beforeAccountsViewMain" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Accounts/createAccountsView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="addAcountDetail" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction" method="addAcountDetail">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+       <action name="accountViewData"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction" method="accountViewData">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="breaktotalReimbursement" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAccountsAction"  method="breaktotalReimbursement">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Accounts/breaktotal.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+        <!-- Accounts Part -->
+      <!-- Advance Work -->
+      
+       <action name="beforeAdvanceGridMain" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Advance/advanceGridViewMain.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="beforeAdvanceGrid" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction"  method="beforeActivityView">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Advance/advanceGridView.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+      
+       <action name="advanceView"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" method="advanceView">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeAdvanceAddPage" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" >
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Advance/advanceAddPage.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="addAdvanceAmount" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" method="addAdvanceAmount">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+     
+     <action name="beforeAdvanceGridSettlement" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityPlanAction"  method="beforeActivityView">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Advance/advanceGridViewSettlement.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="advanceViewSettlement"  class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" method="advanceViewSettlement">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="advanceSettlemement" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" method="advanceSettlemement">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+      <action name="beforeAdvanceSettlementAdd" class="com.Over2Cloud.ctrl.wfpm.activityPlanner.ActivityAdvanceAction" method="beforeAdvanceSettlementAdd">
+            <result name="success" >/view/Over2Cloud/WFPM/ActivityPlanner/Advance/advanceSettlementAddPage.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <!-- Advance Work -->
+       
+</package>
+</struts>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="pdm/escconf" extends="struts-default,json-default" namespace="/view/Over2Cloud/feedback/Escalation_Conf">
+     
+     <action name="BeforeConfigEscalation"  class="com.Over2Cloud.ctrl.feedback.EscalationConfigAction" method="beforeConfigEsc">
+          <result name="success">/view/Over2Cloud/feedback/Escalation_Conf/CreateEscConfig.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="addEscConfig"  class="com.Over2Cloud.ctrl.feedback.EscalationConfigAction" method="addEscConfig">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="escalationTime"  class="com.Over2Cloud.ctrl.feedback.EscalationConfigAction" method="getEscalationTime">
+                <result name="success" type="json"><param name="root">feedDraft</param></result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+      </action>
+     
+     <action name="viewEscDept"  class="com.Over2Cloud.ctrl.feedback.EscalationConfigAction" method="viewEscDept">
+          <result name="success" type="json"></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeTicketViewConf"  class="com.Over2Cloud.ctrl.feedback.TicketConfigAction" method="beforeTicketViewConf">
+          <result name="success">/view/Over2Cloud/feedback/ticket_conf/viewTicketConf.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="ticketViewConf"  class="com.Over2Cloud.ctrl.feedback.TicketConfigAction" method="ticketViewConf">
+          <result name="success" type="json"></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="editTicketViewConf"  class="com.Over2Cloud.ctrl.feedback.TicketConfigAction" method="editTicketViewConf">
+          <result name="success" type="json"></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeConfigTicket"  class="com.Over2Cloud.ctrl.feedback.TicketConfigAction" method="beforeConfigTicket">
+          <result name="success">/view/Over2Cloud/feedback/ticket_conf/createTicketConf.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="addTicketConfig"  class="com.Over2Cloud.ctrl.feedback.TicketConfigAction" method="addTicketConfig">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- ///////////////////// -->
+      <action name="beforeEscConf"  class="com.Over2Cloud.ctrl.feedback.EscalationTypeConfig" method="beforeEscViewConf">
+          <result name="success">/view/Over2Cloud/feedback/escalation_type/viewEscConf.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="escTypeViewConf"  class="com.Over2Cloud.ctrl.feedback.EscalationTypeConfig" method="escTypeViewConf">
+          <result name="success" type="json"></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeConfigEscalation"  class="com.Over2Cloud.ctrl.feedback.EscalationTypeConfig" method="beforeConfigEscalation">
+          <result name="success">/view/Over2Cloud/feedback/escalation_type/createEscalationConfig.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="addEscalationConfig"  class="com.Over2Cloud.ctrl.feedback.EscalationTypeConfig" method="addEscalationConfig">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="editEscalationViewConf"  class="com.Over2Cloud.ctrl.feedback.EscalationTypeConfig" method="editEscalationViewConf">
+          <result name="success" type="json"></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+</package>
+</struts>

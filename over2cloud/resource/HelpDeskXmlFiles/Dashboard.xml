@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="helpDesk/newdashboard" extends="struts-default,json-default" namespace="/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages">
+     <action name="beforeDashboardView"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="beforeDashboardAction">
+          <result name="success">/helpdesk_dashboard.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="dataCounterStatus"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="beforeDashboardAction">
+          <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/DashboardV2.0/Counters/ticketStatusCounter.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="dataCounterLevel"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="beforeDashboardAction">
+          <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/DashboardV2.0/Counters/ticketCounterLevel.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="dataCounterCateg"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="beforeDashboardAction">
+          <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/DashboardV2.0/Counters/ticketCounterCateg.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="maximizeDiv" class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="maximizeDiv" >
+	        <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/maximizeBlock.jsp</result>
+	        <result name="SUCCESSLEVEL">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/maximizeBlockLevel.jsp</result>
+	        <result name="SUCCESSCATEG">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/maximizeBlockCateg.jsp</result>
+	        <result name="error" >/view/common_pages/error.jsp</result>
+			<result name="login" >/view/common_pages/invalidSession.jsp</result>
+       </action>
+       
+        <action name="jsonChartData4CategCounters"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="getBarChart4CategCounters">
+	        <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+     
+     
+      <action name="viewFeedbackDetail"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="getFeedbackDetail">
+          <result name="success" type='json'></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="ticketInfo" class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="geTicketDetails">
+            <result name="ticket_success">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/ticket_info.jsp</result>
+            <result name="feedby_success">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/feedby_info.jsp</result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+       </action>
+       
+       <action name="jsonChartData4DeptCounters"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="getBarChart4DeptCounters">
+	        <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       <action name="jsonChartData4LevelCounters"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="getBarChart4LevelCounters">
+	        <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       <!--<action name="maximizeDiv" class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardAction" method="maximizeDiv" >
+	        <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/maximizeBlock.jsp</result>
+	        <result name="error" >/view/common_pages/error.jsp</result>
+			<result name="login" >/view/common_pages/invalidSession.jsp</result>
+       </action>
+       
+       --><action name="getCatgDetail"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardHelper" method="beforeCategoryView">
+          <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Dashboard_Pages/categoryDetail.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewCategoryDetail"  class="com.Over2Cloud.ctrl.helpdesk.dashboard.DashboardHelper" method="viewCategoryDetail">
+	        <result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+    
+</package>
+</struts>

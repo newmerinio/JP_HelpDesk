@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="questions" extends="struts-default,json-default" namespace="/view/Over2Cloud/questionairOver2Cloud">
+		
+		<action name="createQuestionConf"  class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration" method="createQuestionConf">
+          <result name="success">/view/Over2Cloud/questionair/createQuestionair.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    	</action>
+	
+	 <action name="questionAdd" class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration" method="questionAdd" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		
+   		  <action name="feedbackForm" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="patientFeedback" >
+           <result name="success">/view/Over2Cloud/questionair/mainQuestionForm.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		 
+   		 <action name="createAnswerConf" class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration" method="createAnswerConf" >
+           <result name="success">/view/Over2Cloud/questionair/mainAnswer.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		 <!-- Ankit update 16-06-2015 -->
+   		 <action name="viewAllFeedbackSubmitted41" class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration" method="viewSubmittedFeedback41" >
+           <result name="success">/view/Over2Cloud/questionair/viewSubmittedFeedback41.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+   		 
+   		 
+	<action name="viewQuestionConf"  class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration" method="viewQuestionConf">
+          <result name="success">/view/Over2Cloud/questionair/viewQuestionConf.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    	<action name="questionsView" method="questionsView" class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="subQuestionsView" method="subQuestionsView" class="com.Over2Cloud.ctrl.questionairConf.QuestionairConfiguration">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	</package>
+ </struts>

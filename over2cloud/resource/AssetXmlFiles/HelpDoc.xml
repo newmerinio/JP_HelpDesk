@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="helpDocument" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Help_Doc">
+
+		    
+		    <action name="beforeAddingDocument" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="beforeDocumentUploading">
+				<result name="success">/view/Over2Cloud/AssetOver2Cloud/HelpDocument/beforeaddighelpdocument.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+			</action>
+		    
+		    
+		    <action name="modifyhelpdocument"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="modifyHelpDocument">
+            	<result name="success">/view/success.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+     		</action>
+     		
+     		<action name="modifyuploadgrid"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="modifyuploadgrid">
+            	<result name="success">/view/success.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+     		</action>
+		    
+		    
+		    <action name="uploadaddpage" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="beforeAddingDoc">
+				<result name="success">/view/Over2Cloud/AssetOver2Cloud/HelpDocument/addhelpdocument.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+			</action>
+			
+			
+			<action name="getinglinknameformodule" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="getModuleLinkList" >
+ 		 		<result name="success" type="json"><param name="root">jsonArray</param></result>
+           		<result name="error" >/view/error.jsp</result>
+           		<result name="login">/view/invalidSession.jsp</result>
+    		</action>	
+			
+			 <action name="addhelpdata" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="addHelpData">
+				<result name="success">/view/success.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+			</action>
+			
+			
+			<action name="beforeHelpDocumentView" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="beforeMappingLink">
+				<result name="success">/view/Over2Cloud/AssetOver2Cloud/HelpDocument/viewhelpdocument.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+			</action>	
+	
+			<action name="linkMappingadd"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="linkMappingAdd">
+    			<result name="success">/view/Over2Cloud/AssetOver2Cloud/HelpDocument/linkmapping.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+    		</action>
+    		
+    		<action name="modulelinkmapping"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="insertMapping">
+    			<result name="success">/view/success.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+    		</action>
+    		
+			
+			
+			<action name="moduleLinkingMapping"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="getModuleLinkMappingData">
+    			<result name="success" type="json"></result>
+        		<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+    		</action>
+    		
+    		<action name="uploaddocumentview"  class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="getUploadDocumentData">
+    			<result name="success" type="json"></result>
+        		<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+    		</action>
+    		
+    		
+    		<action name="downloadinghelpdocument" class="com.Over2Cloud.ctrl.asset.helpdoc.AddDocument" method="dowloaddocument">
+	       		<result name="success" type="stream">
+				  <param name="contentType">application/octet-stream</param>
+				  <param name="inputName">fileInputStream</param>
+				  <param name="contentDisposition">attachment;filename="%{filename}"</param>
+				  <param name="bufferSize">1024</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+				<result name="error">/view/error.jsp</result>
+       		</action>
+       		
+       		
+       		
+       		<!--<action name="downloadinghelpdocument" class="com.Over2Cloud.ctrl.common.communication.UploadSmsExceldata" method="dowloadexcelformate">
+      		 <result name="success" type="stream">
+            <param name="contentType">application/vnd.ms-excel</param>
+            <param name="inputName">fileInputStream</param>
+            <param name="contentDisposition">attachment; filename="xlfile.xls"</param>
+            <param name="bufferSize">1024</param>
+            </result>
+             <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+			
+			
+	--></package>
+</struts>

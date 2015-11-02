@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmReferral" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/wfpmReferral">
+     
+     <action name="beforeReferralView"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="beforeReferralView">
+             <result name="success">/view/Over2Cloud/WFPM/referral/beforeViewReferralHeader.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     
+       <action name="beforeReferralGridVieW"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="beforeReferralGridVieW">
+             <result name="indisuccess">/view/Over2Cloud/WFPM/referral/referralIndividualView.jsp</result>
+             <result name="corpsuccess">/view/Over2Cloud/WFPM/referral/referralInstitutionalView.jsp</result>
+             <result name="institutional"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+    <action name="createIndivisualRef"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="createIndivisualRef">
+             <result name="indisuccess">/view/Over2Cloud/WFPM/referral/createRefIndivisual.jsp</result>
+             <result name="instsuccess">/view/Over2Cloud/WFPM/referral/createRefInstitutional.jsp</result>
+             
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchStateInfo"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="fetchStateInfo">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+              <result name="institutional">/view/Over2Cloud/WFPM/referral/referralIndividualView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchCityInfo"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="fetchCityInfo">
+             <result name="success" type="json"><param name="root">commonJsonArr</param></result>
+              <result name="institutional">/view/Over2Cloud/WFPM/referral/referralIndividualView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+    
+    
+    <action name="addindivisualRef"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="addindivisualRef">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+    <action name="addinstitutionalRef"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="addinstitutionalRef">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+       <action name="addInstituationalContact"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="addInstituationalContact">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="viewReferralGridData"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="viewReferralGridData">
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewReferralCorGridData"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="viewReferralCorGridData">
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+     <action name="viewReferralCorContact"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="viewReferralCorContact">
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action> 
+     
+     
+           <action name="orgBasicDetails"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="OrganisationBasicDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/orgClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     
+          <action name="mapContactDetails"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="mapContactDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/orgClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     		
+     	<action name="commstatus"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="inststatus" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/orgClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     	
+       	<action name="beforeStatusAction"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="beforeStatusAction" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/statusAction.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     	
+     	 <action name="statusAction"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="statusAction">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="indiBasicDetails"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralViewData" method="IndividualBasicDetails" >
+	             <result name="success">/view/Over2Cloud/WFPM/referral/orgClickDetails.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+	      </action>
+     
+      <action name="beforeAdhocReferralView"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="beforeAdhocReferralView">
+             <result name="success">/view/Over2Cloud/WFPM/referral/beforeAdhocReferralViewHeader.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     			
+     			
+     	 <action name="viewModifyReferral"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="viewModifyReferral">
+              <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>	
+   		 
+   		  <action name="viewModify"  class="com.Over2Cloud.ctrl.wfpm.referral.ReferralActivityBoard" method="viewModify">
+              <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>		
+     
+</package>
+
+
+</struts>

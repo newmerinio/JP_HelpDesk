@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+
+<package name="vamDownload" extends="struts-default,json-default" namespace="/view/Over2Cloud/VAM/download">
+
+			 <action name="visitorexceldownload" class="com.Over2Cloud.ctrl.VAM.download.DownloadExcel" method="excelView">
+		       <result name="success">/view/Over2Cloud/VAM/Visitor/visitordownloadbar.jsp</result>
+		       <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+		     </action>
+			 <action name="downloadVisitorreport" class="com.Over2Cloud.ctrl.VAM.download.DownloadExcel" method="downloadVisitorExcelDetails">
+	          <result name="success" type="stream" >
+	             <param name="inputName">excelStream</param>
+	            <param name="contentType">application/octet-stream</param>
+	            <param name="contentDisposition">attachment; filename="${downloadFile}"</param>
+	            <param name="bufferSize">2448</param>
+	            </result>
+	            <result name="error">/view/error.jsp</result>
+	             <result name="input">/view/error.jsp</result>
+	             <result name="login" >/view/invalidSession.jsp</result>
+	          </action>
+		          <action name="getvisitorexcelpdfpdfconfirmation">
+	        	 <result>/view/Over2Cloud/VAM/Visitor/downloadexcelpdfvisitor.jsp</result>
+	     		</action>
+	          <action name="getvisitorexceldownload" method="downloadVisitorExcelPdf" class="com.Over2Cloud.ctrl.VAM.download.DownloadExcel">
+            <result name="success" type="stream">
+            <param name="contentType">application/vnd.ms-excel</param>
+            <param name="inputName">excelStream</param>
+            <param name="contentDisposition">attachment; filename="${downloadFile}"</param>
+            <param name="bufferSize">1024</param>
+            </result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+        </action>
+</package>
+</struts>

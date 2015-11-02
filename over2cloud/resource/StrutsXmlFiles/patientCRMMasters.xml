@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+
+
+	<package name="patientCRMMaster" extends="struts-default,json-default" namespace="/view/Over2Cloud/patientCRMMaster">
+	         
+	      <!-- Corporate CRM Relationship Master work ankit 2015 -->
+    
+			<action name="viewRelationshipMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="viewRelationshipMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadRelationshipMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddRelationshipMaster" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="beforeAddRelationshipMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeRelationshipMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addRelationshipMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="addRelationshipMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewRelationshipMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="viewRelationshipMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewRelationshipMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewRelationshipMasterData" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="viewRelationshipMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editRelationshipMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipMaster" method="editRelationshipMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <!-- Budget planning-->
+    	
+    	<action name="viewBudgetPlanningHeader" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="beforeBudgetPlanning">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/beforebudgetdataview.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       	</action>
+       	
+       	
+       	<action name="viewAllocateBudgetHeader" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="beforeBudgetPlanning">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAllocateBudgetView.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       	</action>
+       	
+       	<action name="viewBudgetPlanningDetails" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="viewBudgetPlanningDetails">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/viewbudgetplanning.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       	</action>
+       	
+       	<action name="viewAllocateBudgetDetails" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="viewAllocateBudgetDetails">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/viewAllocateBudget.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       	</action>
+       	
+       	
+       	<action name="viewBudgetPlanningGrid" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="viewBudgetPlanningMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       <action name="beforeBudgetPlanningAdd"  class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="beforeBudgetPlanningAdd" >
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/budgetplanningadd.jsp</result>
+		    	<result name="login">/view/invalidSession.jsp</result>
+     		</action>
+       
+       	
+       	<action name="gettingMonthSum" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="monthSumData" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+       	
+       	<action name="viewForMonth" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="monthsForAllocate" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+       	
+       	
+       	<action name="viewForMonth" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="monthsForAllocate" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+    	<action name="removeForMonth" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="removemonthsForAllocate" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+       	
+       	<action name="viewEmployeeName" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="employeeNameData" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+    	
+    		<action name="addBudgetPlanning"  class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="addBudgetata" >
+            	<result name="success">/view/success.jsp</result>
+           		<result name="error" >/view/error.jsp</result>
+           		<result name="login">/view/common_pages/invalidSession.jsp</result>
+     		</action>
+     		
+     		
+     		<action name="addAllocateBudgetData"  class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="addAllocateBudgetata" >
+            	<result name="success">/view/success.jsp</result>
+           		<result name="error" >/view/error.jsp</result>
+           		<result name="login">/view/common_pages/invalidSession.jsp</result>
+     		</action>
+     		
+     		<action name="viewAllocateBudgetGrid" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="viewAllocatedBudgetGridData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+     		
+       		 
+       		 
+       		 <action name="editBudgetPlanningGrid" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="editBudgetPlanningDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+       		 
+       		 
+       		 <action name="editAllocateBridgeGrid" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlanning" method="editAllocateBudgetDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+       		 
+       		 
+       		 
+       		 <!-- Configure Schedule Master -->
+       		
+       		<action name="viewConfigureScheduleHeader" class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="beforeConfigureSchdule">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeConfigureDataView.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="viewConfigureScheduleDetails" class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="viewConfigurationScheduleDetails">
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/viewConfigureSchdule.jsp</result>
+            	<result name="error">/view/error.jsp</result>
+            	<result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="beforeConfigureScheduleAdd"  class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="beforeConfigureScheduleAdd" >
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/configureScheduleAdd.jsp</result>
+		    	<result name="login">/view/invalidSession.jsp</result>
+     		</action>
+     		
+     		<action name="gettngEmployee"  class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="empData" >
+            	<result name="success" >/view/Over2Cloud/PatientCRMMasters/viewEmpInSchedule.jsp</result>
+		    	<result name="login">/view/invalidSession.jsp</result>
+     		</action>
+     		
+     		<action name="addConfigureSchedule"  class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="addConfigureData" >
+            	<result name="success">/view/success.jsp</result>
+           		<result name="error" >/view/error.jsp</result>
+           		<result name="login">/view/common_pages/invalidSession.jsp</result>
+     		</action>	
+     		
+     		<action name="viewConfigureScheduleGrid" class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="viewConfigureScheduleMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+     		
+     		
+     		<action name="editConfigureScheduleDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ScheduleConfigureMaster" method="editConfigureScheduleMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+       		 
+    	
+    	<!-- Corporate CRM Category Master work ankit 2015 -->
+    	
+			<action name="viewCategoryMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="viewCategoryMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadCategoryMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddCategoryMaster" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="beforeAddCategoryMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeCategoryMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addCategoryMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="addCategoryMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewCategoryMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="viewCategoryMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewCategoryMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewCategoryMasterData" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="viewCategoryMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editCategoryMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.CategoryMaster" method="editCategoryMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	         
+	       <!-- Corporate CRM Source Master work ankit 2015 -->
+    	
+			<action name="viewSourceMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="viewSourceMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadSourceMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddSourceMaster" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="beforeAddSourceMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeSourceMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addSourceMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="addSourceMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewSourceMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="viewSourceMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewSourceMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewSourceMasterData" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="viewSourceMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editSourceMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.SourceMaster" method="editSourceMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+	       <!-- Adhoc Corporate Master work ankit 2015 -->
+    	
+			<action name="viewAdhocCorporateHeader" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="viewAdhocCorporateHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadAdhocCorporate.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddAdhocCorporate" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="beforeAddAdhocCorporate">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAdhocCorporateAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addAdhocCorporateDetails" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="addAdhocCorporateDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       
+		<action name="viewAdhocCorporateDetails" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="viewAdhocCorporateDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewAdhocCorporateDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewAdhocCorporateData" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="viewAdhocCorporateData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 		<action name="editAdhocCorporateDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="editAdhocCorporateDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>  
+	      <action name="getCityList" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="getCityList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action>   
+    	
+    	
+    	 <!-- Adhoc Associate Master work ankit 2015 -->
+    	
+			<action name="viewAdhocAssociateHeader" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="viewAdhocAssociateHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadAdhocAssociate.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddAdhocAssociate" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="beforeAddAdhocAssociate">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAdhocAssociateAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addAdhocAssociateDetails" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="addAdhocAssociateDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       
+		<action name="viewAdhocAssociateDetails" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="viewAdhocAssociateDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewAdhocAssociateDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewAdhocAssociateData" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="viewAdhocAssociateData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 		<action name="editAdhocAssociateDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="editAdhocAssociateDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>  
+	      <action name="getCityList" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="getCityList" >
+ 		 <result name="success" type="json"><param name="root">jsonArray</param></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    	</action> 
+    	
+	      <!-- Corporate CRM Relationship work ankit 2015 -->
+    	
+			<action name="viewRelationshipHeader" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="viewRelationshipHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadRelationship.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddRelationship" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="beforeAddRelationship">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeRelationshipAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addRelationshipDetails" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="addRelationshipDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewRelationshipDetails" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="viewRelationshipDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewRelationshipDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewRelationshipData" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="viewRelationshipData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editRelationshipDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.RelationshipTypeMaster" method="editRelationshipDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     <!-- Corporate CRM Lost Opportunity(Patient) Master work ankit 2015 -->
+    	
+			<action name="viewPatientLostMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="viewPatientLostMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadPatientLostMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddPatientLostMaster" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="beforeAddPatientLostMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforePatientLostMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addPatientLostMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="addPatientLostMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewPatientLostMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="viewPatientLostMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewPatientLostMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewPatientLostMasterData" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="viewPatientLostMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editPatientLostMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.PatientLostMaster" method="editPatientLostMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+
+ <action name="beforeAddAdhocAssociateTemp" class="com.Over2Cloud.ctrl.cps.corporate.AdhocAssociateMasterAction" method="beforeAddAdhocAssociate">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAdhocAssociateAddTemp.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+
+ <action name="beforeAddAdhocCorporateTemp" class="com.Over2Cloud.ctrl.cps.corporate.AdhocCorporateMasterAction" method="beforeAddAdhocCorporate">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAdhocCorporateAddTemp.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+<!-- Corporate CRM   Territory Master work ankit 2015 -->
+    	
+			<action name="viewTerritoryHeader" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="viewTerritoryMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadTerritory.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddTerritory" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="beforeAddTerritoryMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeTerritoryAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addTerritoryDetails" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="addTerritoryMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewTerritoryDetails" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="viewTerritoryMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewTerritoryDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewTerritoryrData" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="viewTerritoryMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editTerritoryDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.TerritoryMaster" method="editTerritoryMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+    	
+    	<!-- Patient CRM Location country, state, city -->
+	     
+	     <action name="viewConfigureLocationHeader" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="viewConfigureLocationHeader">
+	            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadConfigureLocation.jsp</result>
+	            <result name="error">/view/error.jsp</result>
+	            <result name="login">/view/invalidSession.jsp</result>
+       	 </action>
+       	 
+       		
+       	<action name="viewConfigureLocation" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="viewConfigureLocation">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewConfigureLocation.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       	
+       	<action name="viewCountryData" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="viewCountryData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	       
+	        	<action name="viewStateData" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="viewStateData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="viewCityData" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="viewCityData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+       		 <action name="beforeAddConfigureLocation" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="beforeAddConfigureLocation">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAddConfigureLocation.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="addCountry" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="addCountry">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		  <action name="addState" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="addState">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+       		  <action name="addCity" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="addCity">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 <action name="editCountryDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ConfigureLocation" method="editCountryDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       	
+       <!-- Corporate CRM Activity Master work ankit 2015 -->
+    	
+			<action name="viewActivityTypeMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="viewActivityTypeMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadActvityTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddActivityTypeMaster" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="beforeAddActivityTypeMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAddActivityTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addActivityTypeMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="addActivityTypeMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewActivityTypeMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="viewActivityTypeMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewActivityTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+		
+       		<action name="editActivityTypeMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="editActivityTypeMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		  <action name="viewActivityTypeMasterData" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="viewActivityTypeMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	   <action name="viewActivityReasonData" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="viewActivityReasonData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       
+		<action name="addActivityReason" class="com.Over2Cloud.ctrl.cps.corporate.ActivityTypeMaster" method="addActivityReason">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>		 
+	   
+	   
+	     <!-- PCRM Event Configure Master work ankit 2015 -->
+    	
+			<action name="viewEventConfigureHeader" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewEventConfigureHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadEventConfigure.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		
+			<action name="beforeHeadMapEventCostParameter" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewEventCostDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadMapEventCostParameter.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+       		
+       		<action name="beforeAddEventConfigureMaster" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="beforeAddEventConfigureMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAddConfigureEvent.jsp
+            </result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addEventCostParameters" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="addEventCostParameters">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewEventCostDetails" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewEventCostDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewEventConfiguredDetail.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+		
+       		<action name="editEventTypeMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="editEventTypeMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="viewModifyEventRoiCost" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewModifyEventRoiCost">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		  
+       		 
+       		  <action name="viewEventCostData" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewEventCostData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	   <action name="viewEventRoiCostData" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="viewEventRoiCostData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+       		
+       
+		<action name="addEventRoi" class="com.Over2Cloud.ctrl.cps.corporate.EventConfigureMaster" method="addEventRoi">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>		 
+	   
+	  	      <!-- CRM Expense Parameter Master work ankit 2015 -->
+    
+			<action name="viewExpenseParameterHeader" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="viewExpenseParameterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadExpenseParameter.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddExpenseParameter" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="beforeAddExpenseParameter">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeExpenseParameterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addExpenseParameterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="addExpenseParameterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewExpenseParameterDetails" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="viewExpenseParameterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewExpenseParameterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewExpenseParameterData" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="viewExpenseParameterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editExpenseParameterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseParameter" method="editExpenseParameterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>   
+	     
+	        <!--  CRM Event Planning work ankit 2015 -->
+    
+			<action name="viewEventPlanHeader" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="viewEventPlanHeader">
+            <result name="success" >/view/Over2Cloud/PCRMEventPlan/beforeHeadEventPlan.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddEventPlan" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="beforeAddEventPlan">
+            <result name="success" >/view/Over2Cloud/PCRMEventPlan/beforeEventPlanAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addEventPlanDetails" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="addEventPlanDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewEventPlanDetails" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="viewEventPlanDetails">
+            <result name="success" >/view/Over2Cloud/PCRMEventPlan/viewEventPlanDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewEventPlanData" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="viewEventPlanData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editEventPlanDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="editEventPlanDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		  <action name="fetchEventParameters" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="fetchEventParameters">
+	            <result name="success" type="json">
+				<param name="dataArray">dataArray</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+	         
+	           <action name="fetchEventROIParameters" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="fetchEventROIParameters">
+	            <result name="success" type="json">
+				<param name="dataArray">dataArray</param>
+				</result>
+				<result name="login">/view/invalidSession.jsp</result>
+	        </action>
+	         
+	         
+	          <action name="fetchMappedTeam" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="fetchMappedTeam">
+					<result name="success" >/view/Over2Cloud/PCRMEventPlan/mutliselectDD.jsp</result>
+					<result name="error">/view/common_pages/error.jsp</result>
+					<result name="login">/view/common_pages/invalidSession.jsp</result>
+		     </action>
+     
+	      <action name="viewEventParamRoi" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="fetchDataParamRoi">
+            <result name="success">/view/Over2Cloud/PCRMEventPlan/viewEventDataParamRoi.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     
+ <action name="fillDCRForEvent" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="fillDCRForEvent">
+            <result name="success">/view/Over2Cloud/PCRMEventPlan/beforeDCRAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     
+	     	<action name="addEventDCR" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="addEventDCR">
+           <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+	      <action name="filledDCRValues" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="filledDCRValues">
+            <result name="success">/view/Over2Cloud/PCRMEventPlan/viewDCRParamRoiDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+	     
+	     
+	        <!-- Corporate CRM Currency Master work ankit 2015 -->
+    	
+			<action name="viewCurrencyTypeMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="viewCurrencyTypeMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadCurrencyTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddCurrencyTypeMaster" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="beforeAddCurrencyTypeMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAddCurrencyTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addCurrencyTypeMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="addCurrencyTypeMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewCurrencyTypeMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="viewCurrencyTypeMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewCurrencyTypeMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewCurrencyTypeMasterData" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="viewCurrencyTypeMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editCurrencyTypeMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.CurrencyTypeMaster" method="editCurrencyTypeMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	    <action name="approveEventRequest" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="approveEventRequest">
+           <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	    <action name="beforeApproveByManagerAdd" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="beforeApproveByManagerAdd">
+           <result name="success" >/view/Over2Cloud/PCRMEventPlan/beforeApproveByManagerAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     
+	     
+	     
+	     <action name="approveByManagerAdd" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="approveByManagerAdd">
+           <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     
+	     <action name="approveDCRRequest" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="approveDCRRequest">
+           <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 
+	     
+	       <action name="beforeApproveByManagerDCRAdd" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="beforeApproveByManagerDCRAdd">
+           <result name="success" >/view/Over2Cloud/PCRMEventPlan/beforeApproveByManagerDCRAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	     
+	     <action name="approveByManagerDCRAdd" class="com.Over2Cloud.ctrl.cps.corporate.EventPlan" method="approveByManagerDCRAdd">
+           <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	     
+	    
+	    <!-- PCRM Budget Planning master  -->
+	    
+	      <action name="viewBudgetPlanHeader" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="viewBudgetPlanHeader">
+	            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadBudgetPlan.jsp</result>
+	            <result name="error">/view/error.jsp</result>
+	            <result name="login">/view/invalidSession.jsp</result>
+       	 </action>
+       	 
+       		 
+       		 <action name="beforeAddBudgetPlan" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="beforeAddBudgetPlan">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeAddConfigureBudgetPlan.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       	
+	    <action name="addFinancialYear" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="addFinancialYear">
+		           <result name="success" >/view/success.jsp</result>
+		            <result name="error">/view/error.jsp</result>
+		            <result name="login">/view/invalidSession.jsp</result>
+	     </action>
+
+
+ <action name="viewConfiguredBudgetPlan" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="viewConfiguredBudgetPlan">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewBudgetPlanDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+
+		<action name="viewBudgetYearData" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="viewBudgetYearData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		 	
+	    <action name="addBudgetPlanMonth" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="addBudgetPlanMonth">
+		           <result name="success" >/view/success.jsp</result>
+		            <result name="error">/view/error.jsp</result>
+		            <result name="login">/view/invalidSession.jsp</result>
+	     </action>
+	     
+       	<action name="viewBudgetPlanMonthData" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="viewBudgetPlanMonthData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	    
+	    
+	   	<action name="fetchRemainingBalance" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchRemainningBalance">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+	    
+	    
+	      <action name="fetchEmployeeName" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchEmployeeName" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	   
+	         
+	        		 	
+	    <action name="addBudgetPlanForEmployee" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="addBudgetPlanForEmployee">
+		           <result name="success" >/view/success.jsp</result>
+		            <result name="error">/view/error.jsp</result>
+		            <result name="login">/view/invalidSession.jsp</result>
+	     </action> 
+	         
+	         <action name="fetchMonthRemainingBalance" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchMonthRemainingBalance">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+
+		<action name="viewBudgetPlanEmployeeData" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="viewBudgetPlanEmployeeData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       </action>
+       		 	         
+	    <action name="fetchBudgetMonthByGraph" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchBudgetMonthByGraph">
+			<result name="success" >/view/Over2Cloud/PatientCRMMasters/ViewMonthBudgetByGraph.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       </action>
+       	     
+       	     <action name="fetchMontlyAllotedBudget" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchMontlyAllotedBudget">
+					<result name="success" type="json"></result>
+					<result name="error">/view/error.jsp</result>
+					<result name="login">/view/invalidSession.jsp
+					</result>
+		</action>
+	         
+	         
+	     <action name="fetchMonthByYear" class="com.Over2Cloud.ctrl.cps.corporate.BudgetPlan" method="fetchMonthByYear" >
+ 		 	<result name="success" type="json"><param name="root">jsonArray</param></result>
+           	<result name="error" >/view/error.jsp</result>
+           	<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	
+    	<!--  PCRM KPI Master work ankit 2015 -->
+    	
+			<action name="viewKPIMasterHeader" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="viewKPIMasterHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadKPIMaster.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddKPIMaster" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="beforeAddKPIMaster">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeKPIMasterAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addKPIMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="addKPIMasterDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewKPIMasterDetails" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="viewKPIMasterDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewKPIMasterDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewKPIMasterData" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="viewKPIMasterData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editKPIMasterDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.KPIMaster" method="editKPIMasterDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action> 
+	    
+	         
+	           <!-- CRM Band Map With Expense Parameter Master work ankit 2015 -->
+    
+			<action name="viewExpenseBandHeader" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="viewExpenseBandHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadExpenseBand.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddExpenseBand" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="beforeAddExpenseBand">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeExpenseBandAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addExpenseBandDetails" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="addExpenseBandDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewExpenseBandDetails" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="viewExpenseBandDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewExpenseBandDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewExpenseBandData" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="viewExpenseBandData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editExpenseBandDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.ExpenseBand" method="editExpenseBandDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+	     <!-- Corporate CRM Band Mapped to Employee Master work ankit 2015 -->
+    
+			<action name="viewBandEmployeeMappingHeader" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="viewBandEmployeeMappingHeader">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeHeadBandEmployeeMapping.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		
+       		<action name="beforeAddBandEmployeeMapping" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="beforeAddBandEmployeeMapping">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/beforeBandEmployeeMappingAdd.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+
+		<action name="addBandEmployeeMappingDetails" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="addBandEmployeeMappingDetails">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       
+		<action name="viewBandEmployeeMappingDetails" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="viewBandEmployeeMappingDetails">
+            <result name="success" >/view/Over2Cloud/PatientCRMMasters/viewBandEmployeeMappingDetails.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>	
+
+		<action name="viewBandEmployeeMappingData" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="viewBandEmployeeMappingData">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+       		<action name="editBandEmployeeMappingDataGrid" class="com.Over2Cloud.ctrl.cps.corporate.BandEmployeeMapping" method="editBandEmployeeMappingDataGrid">
+            <result name="success" type="json" ></result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+	         
+	         
+	         
+	 </package>
+	 
+	 
+</struts>

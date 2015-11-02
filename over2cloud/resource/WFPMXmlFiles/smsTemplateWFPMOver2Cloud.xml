@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	
+	<package name="SMSTemplate" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/SMSTemplate">
+	
+		<action name="beforeViewSMSTemplate" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/smsTemplate.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeViewSMSTemplateOffring" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/viewSMSTemplateOnOffering.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeAddSMSTemplate" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="beforeCreateSMSTemplate">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/createSMSTemplate.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeAddSMSTemplateOnOffering" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="beforeCreateSMSTemplateOnOffering">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/createSMSTemplateOnOffering.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="addSMSTemplate" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="createSMSTemplate">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="smsTemplateView" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="viewSMSTeplate">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="deleteSMSTemplate" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="deleteSMSTemplateById">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeNoneRegister" class="com.Over2Cloud.ctrl.wfpm.template.SMSTemplate" method="beforeNoneRegisterUserShow">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/noneRegisterUser.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+
+		<action name="beforeIVRSRecordView" class="com.Over2Cloud.ctrl.wfpm.template.IVRSReport">
+			<result name="success">/view/Over2Cloud/WFPM/SMSTemplate/ivrsReportView.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+	</package>
+</struts>

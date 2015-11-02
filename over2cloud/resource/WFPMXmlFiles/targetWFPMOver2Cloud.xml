@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmTarget" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/target">
+     
+     <action name="beforeTargetView"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="beforeTargetView">
+             <result name="KPI">/view/Over2Cloud/WFPM/target/view/viewTargetKpiGrid.jsp</result>
+             <result name="OFFERING">/view/Over2Cloud/WFPM/target/view/viewTargetOfferingGrid.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeTargetMainView"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="beforeTargetMainView">
+             <result name="success">/view/Over2Cloud/WFPM/target/view/viewTarget.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeTargetAdd"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="beforeTargetAdd">
+             <result name="KPI">/view/Over2Cloud/WFPM/target/add/addKPITarget.jsp</result>
+             <result name="OFFERING">/view/Over2Cloud/WFPM/target/add/addOfferingTarget.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchEmpMappedKpi"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="fetchEmpMappedKpi">
+             <result name="success">/view/Over2Cloud/WFPM/target/add/empMappedKpi.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchEmpMobile"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="fetchEmpMobile">
+             <result name="success" type="json"><param name="empMobile">empMobile</param></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addKpiTarget"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="addKpiTarget">
+             <result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewTargetForKpiOuterGrid"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="viewTargetForKpiOuterGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewTargetForKpiInnerGrid"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="viewTargetForKpiInnerGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewTargetForOfferingInnerGrid"  class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="viewTargetForOfferingInnerGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchAllOffering" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="fetchAllOffering">
+             <result name="success">/view/Over2Cloud/WFPM/target/add/allOffering.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addOfferingTarget" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="addOfferingTarget">
+             <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeKpiTargetEdit" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="beforeKpiTargetEdit">
+             <result name="success">/view/Over2Cloud/WFPM/target/edit/editKPITarget.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeOfferingTargetEdit" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="beforeOfferingTargetEdit">
+             <result name="success">/view/Over2Cloud/WFPM/target/edit/editOfferingTarget.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="editKpiTarget" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="editKpiTarget">
+             <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="editOfferingTarget" class="com.Over2Cloud.ctrl.wfpm.target.TargetCtrlAction" 
+     		 method="editOfferingTarget">
+             <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+</package>
+
+
+</struts>

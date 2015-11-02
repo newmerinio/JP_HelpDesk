@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="helpDesk/lodgeComplaint" extends="struts-default,json-default" namespace="/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint">
+     
+     <action name="beforeLodgeComplaintCall"  class="com.Over2Cloud.ctrl.helpdesk.common.HelpdeskUniversalAction" method="beforeLogeComplaintCall">
+            	<result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/createComplaintViaCall.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+  
+    <action name="getEmployee4Escalation"  class="com.Over2Cloud.ctrl.offeringComplaint.LodgeComplaintAction" method="getEmployee4Escalation">
+            <result name="success" type="json"></result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+     </action>
+     
+      <action name="sendFeedbackCall"  class="com.Over2Cloud.ctrl.offeringComplaint.LodgeComplaintAction" method="registerFeedbackViaCall">
+             <result name="success">/view/success.jsp</result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeComplaintAction"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="beforeActionOnFeedback">
+            <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/viewComplaint.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+        <action name="viewSearchedFeedForAction"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="actionOnFeedback">
+         <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/complaintViewSearched.jsp</result>
+	     <result name="error">/view/error.jsp</result>
+	     <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+   
+     <action name="viewFeedbackDetail"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="getFeedbackDetail">
+            <result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+   </action>
+   <action name="feedAction"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="redirectToJSP">
+            <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Complaint/compliantAction.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="actionOnComplaint"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="updateFeedbackStatus">
+            <result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getResolver"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="getResolverData">
+            <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getRCAData"  class="com.Over2Cloud.ctrl.offeringComplaint.ActionOnComplaint" method="getRCAData">
+            <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+</package>
+</struts>

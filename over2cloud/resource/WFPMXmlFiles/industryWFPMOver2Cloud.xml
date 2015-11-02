@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmindustry" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/industry">
+     
+     <action name="beforeIndustryView"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="beforeIndustryView">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/industryView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      
+      <action name="beforeIndustryAdd"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="beforeIndustryAdd">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/createIndustry.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <!-- Ajax Calling for offering from level 1 to level 4 -->
+      
+      <action name="getallLevel1Industry"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="getallLevel1Industry">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/level1Industry.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+	     <!-- Level 1to Level 2 Industry adding based on user action -->
+      
+        <action name="level1AddIndustry"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="level1AddIndustry">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       <action name="level2AddSubIndustry"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="level2AddSubIndustry">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       <!-- Industry view -->
+       <action name="viewLevel1"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="viewLevel1Industry">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="viewModifyLevel1"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryActionControl" method="viewModifyLevel1">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+     <!-- Mapping of Offering with Department of Sub-Industry of Industry  -->
+     <action name="beforeIndustryMap"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="beforeIndustryMap">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/mapIndustryOffering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchsubIndustryName" class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="fetchsubIndustryName">
+             <result name="success" type="json"><param name="root">jsonArray</param> </result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchOfferingLevelData" class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="fetchOfferingLevelData">
+    
+             <result name="success" type="json"><param name="root">jsonArray</param> </result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchOfferingLevelDataforsubOffering" class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="fetchOfferingLevelData">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/mapsubOfferingDDData.jsp</result>
+             <result name="error">/view/error.jsp</result>
+		   	<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchOfferingLevelDataforOffering" class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="fetchOfferingLevelData">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/mapofferingDDData.jsp</result>
+             <result name="error">/view/error.jsp</result>
+		   	<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="addMapIndustryOffering" class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="addMapIndustryOffering">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <!-- Assign weightage -->
+     <action name="beforeAssignWeightage"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="beforeAssignWeightage">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/assignWeightage.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforMapWeightage"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="beforMapWeightage">
+             <result name="success">/view/Over2Cloud/WFPM/Industry/mapweightageToDept.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="saveAssignWeightage"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="assignWeightage">
+                <result name="success">/view/success.jsp</result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeTargetSegmentView"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" 
+     		 method="beforeTargetSegmentView">
+                <result name="success">/view/Over2Cloud/WFPM/Industry/targetMap/targetMap.jsp</result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+ 	<action name="viewWeightage"  class="com.Over2Cloud.ctrl.wfpm.industry.IndustryMapActionControl" method="viewWeightage">
+              <result name="success" type="json"></result>
+              <result name="error">/view/error.jsp</result>
+			  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+</package>
+</struts>

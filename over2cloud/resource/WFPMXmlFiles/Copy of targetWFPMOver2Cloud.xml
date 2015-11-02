@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmTarget" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/target">
+     
+     <action name="beforeTargetAdd"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="beforeTargetAdd">
+             <result name="success">/view/Over2Cloud/WFPM/target/targetEmpList.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="mapTarget"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="mapTarget">
+             <result name="success">/view/Over2Cloud/WFPM/target/EmployeeInfoForTarget.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      
+      <action name="alloteTargetToEmploee"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="alloteTargetToEmploee">
+                <result name="success">/view/success.jsp</result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="beforeTargetView"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="beforeTargetAdd">
+             <result name="success">/view/Over2Cloud/WFPM/target/targetView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeTargetGridView"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="beforeTargetGridView">
+             <result name="success">/view/Over2Cloud/WFPM/target/targetViewGrid.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="targetGridView"  class="com.Over2Cloud.ctrl.wfpm.target.TargetActionControl" method="targetGridView">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+</package>
+
+
+</struts>

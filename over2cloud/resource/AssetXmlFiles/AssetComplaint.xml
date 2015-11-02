@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"></constant>
+<package name="asset/lodgecomplaint" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint">
+       
+        <action name="assetComplaint" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="justCheck">
+                 <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetComplaint.jsp</result>
+                 <result name="error">/view/error.jsp</result>
+                 <result name="login">/view/invalidSession.jsp</result>
+         </action>
+       
+         <action name="beforeFeedComplaint" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="firstActionMethod">
+                 <result name="online_success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetComplaintViaOnline.jsp</result>
+                 <result name="call_success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetComplaintViaCall.jsp</result>
+                 <result name="error">/view/error.jsp</result>
+                 <result name="login">/view/invalidSession.jsp</result>
+         </action>
+         
+         <action name="getAssetDetail" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="getAssetDetailINJSONArray">
+			<result name="success" type="json"><param name="root">commonJSONArray</param></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+          <action name="getAssetTypeDetail" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="getAssetTypeDetail">
+			<result name="success" type="json"><param name="root">commonJSONArray</param></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+          <action name="getComplaintCategory" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="getComplaintCategory">
+			<result name="success" type="json"><param name="root">commonJSONArray</param></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+         <action name="getDataById" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="getDataById">
+			<result name="success" type="json"><param name="root">assetObj</param></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+         <action name="getEmp4Escalation" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="getEmp4Escalation" >
+            <result name="success" type="json"></result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+         <action name="registerFeedbackViaCall"  class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="registerFeedback">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetTicketPrint.jsp</result>
+             <result name="error" >/view/common_pages/error.jsp</result>
+             <result name="login" >/view/common_pages/invalidSession.jsp</result>
+         </action>
+         
+          <action name="FeedbackViaOnline"  class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="registerFeedback">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetOnlineConfirmation.jsp</result>
+            <result name="TicketError">/view/success.jsp</result>
+            <result name="error" >/view/common_pages/error.jsp</result>
+            <result name="login" >/view/common_pages/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeFeedView"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="beforeActionOnFeedback">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/viewAssetComplaint.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewFeedbackDetail"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="getFeedbackDetail">
+            <result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="feedAction"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="redirectToJSP">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/actionOnAssetFeedback.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="actionOnFeedback"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="updateFeedbackStatus">
+            <result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getResolver"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="getResolverData">
+            <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Feedback/ajaxResResolver.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getRCA"  class="com.Over2Cloud.ctrl.asset.complaint.ActionOnAssetComplaint" method="getRCA">
+            <result name="success">/view/Over2Cloud/HelpDeskOver2Cloud/Lodge_Feedback/ajaxResRCA.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewMoreFeedbackDetail"  class="com.Over2Cloud.ctrl.asset.complaint.ActivityOnAsset" method="getMoreFeedbackDetail">
+            <result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="printTicketInfo" class="com.Over2Cloud.ctrl.asset.complaint.AssetComplaintAction" method="geTicketDetails">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_Complaint/assetTicketPrint.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+</package>
+</struts>

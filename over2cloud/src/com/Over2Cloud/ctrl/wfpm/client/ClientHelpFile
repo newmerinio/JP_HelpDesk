@@ -1,0 +1,13 @@
+1. Table 'client_offering_mapping' field 'isConverted' defines whether a client has been converted to 
+   existing client or not for a particular product.
+   0 Not converted
+   1 Converted
+   2 Lost Client
+2. Table 'client_takeaction' field 'isFinished' defines whether an action has been completed or not
+   0 Incomplete
+   1 Finished
+   
+      
+
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="wfpmIncentive" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/incentive">
+		
+		<action name="beforeIncentiveMainView"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="beforeIncentiveMainView">
+             <result name="success">/view/Over2Cloud/WFPM/incentive/view/viewIncentive.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+        </action>
+		 <action name="beforeIncentiveView"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="beforeIncentiveView">
+             <result name="KPI">/view/Over2Cloud/WFPM/incentive/view/viewIncentiveKpiGrid.jsp</result>
+             <result name="OFFERING">/view/Over2Cloud/WFPM/incentive/view/viewIncentiveOfferingGrid.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+      <action name="viewIncentiveForKpiOuterGrid"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="viewIncentiveForKpiOuterGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewIncentiveForKpiInnerGrid"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="viewIncentiveForKpiInnerGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="viewIncentiveForOfferingInnerGrid"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="viewIncentiveForOfferingInnerGrid">
+             <result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeIncentiveAdd"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="beforeIncentiveAdd">
+             <result name="KPI">/view/Over2Cloud/WFPM/incentive/add/addKPIIncentive.jsp</result>
+             <result name="OFFERING">/view/Over2Cloud/WFPM/incentive/add/addOfferingIncentive.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="addKpiIncentive"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="addKpiIncentive">
+             <result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="addOfferingIncentive"  class="com.Over2Cloud.ctrl.wfpm.incentive.IncentiveCtrlAction" 
+     		 method="addOfferingIncentive">
+             <result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+		
+	</package>
+</struts>

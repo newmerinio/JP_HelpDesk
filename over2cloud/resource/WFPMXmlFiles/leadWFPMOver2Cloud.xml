@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmLead" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/Lead">
+
+     <action name="beforeleadAdd"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="beforeleadAdd">
+             <result name="success">/view/Over2Cloud/WFPM/lead/leadGeneration.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="excelUpload">
+             <result name="success">/view/Over2Cloud/WFPM/lead/excelUpload.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="leadGenerationAdd"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="leadGenerationAdd">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+      <!-- changes by manab for counter in change -->
+     <action name="counter"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="counter">
+             <result name="success">/view/Over2Cloud/WFPM/lead/counter.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="beforeleadView"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="beforeleadView">
+             <result name="success">/view/Over2Cloud/WFPM/lead/viewLeadGeneration.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="searshowbeforeleadView" class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="beforeleadView">
+      <result name="success">/view/Over2Cloud/WFPM/lead/searchviewlead.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+       
+        <action name="viewLeadGrid"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="viewLeadGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+       
+       <action name="lostLead"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="lostLead">
+             <result name="success">/view/Over2Cloud/WFPM/lead/lostLead.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewLostLead"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="viewLostLead">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+        <action name="deleteLeadGridOper"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="deleteLeadGridOper">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="dashboardView"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="beforeDashboardView">
+            	<result name="success">/view/Over2Cloud/WFPM/lead/leadDashboard.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="leadAction"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="leadAction">
+             <result name="success">/view/Over2Cloud/WFPM/lead/viewLeadGeneration.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+        <action name="returnLeadAction"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="returnLeadAction">
+             <result name="success">/view/Over2Cloud/WFPM/lead/leadGenerationAction.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       <action name="fillType"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="fillType">
+	<result  name="success" type="stream">
+		<param name="contentType">text/html</param>
+		<param name="inputName">inputStream</param>
+	</result>
+	<result name="login" >/view/common_pages/invalidSession.jsp</result>
+</action>
+<action name="updateLeadAction"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="updateLeadAction">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+
+
+<action name="updateLostLead"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="updateLostLead">
+             <result name="success">/view/Over2Cloud/WFPM/lead/lostLead.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       
+<action name="leadHistoryAction" class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" method="leadHistoryAction">
+	  <result name="success">/view/Over2Cloud/WFPM/lead/leadHistory.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+</action>
+
+<!--    For Excel Upload         -->         
+
+<action name="currentColumn" class="com.Over2Cloud.ctrl.wfpm.lead.LeadCommonAction" method="getColumn4Download">
+			<result name="success">/view/Over2Cloud/WFPM/lead/confirm4Download.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+		<action name="downloadAction" class="com.Over2Cloud.ctrl.wfpm.lead.LeadCommonAction" method="downloadExcel">
+			<result name="success" type="stream"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		<action name="uploadExcel" class="com.Over2Cloud.ctrl.wfpm.lead.ExcelUpload" method="readExcelData">
+			<result name="astConfirm">/view/Over2Cloud/WFPM/lead/confirm4Upload.jsp</result> 
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		<action name="viewUploadExcelGridData" class="com.Over2Cloud.ctrl.wfpm.lead.ExcelUpload" method="viewConfirmationData">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		<action name="saveExcelData" class="com.Over2Cloud.ctrl.wfpm.lead.ExcelUpload" method="saveSelectData">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+        <action name="leadmailandsms" class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction" method="fetchContacAndEmail">
+       		<result>/view/Over2Cloud/WFPM/lead/mailandsms.jsp</result> 
+        </action>
+        <action name="sendmailiAction" class="com.Over2Cloud.ctrl.wfpm.lead.SendMailandsmsAction" method="sendinvoicemail">
+        	<result name="success">/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+		    <result name="login">/view/invalidSession.jsp</result>
+        </action>
+       <action name="ccemaildata"  class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction" method="fetchMailIdForCC">
+	    	<result name="success" type="json"><param name="root">jsonArray</param></result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	 <action name="bccemaildata"  class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction" method="fetchMailIdForBCC">
+	    	<result name="success" type="json"><param name="root">jsonArray</param></result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    	</action>
+    	 
+ <action name="maildataontemplate"  class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction"  method="mailDataForTemplate" >
+      <result name="success" type="json"><param name="root">messageValue</param></result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+       </action>
+        
+<!-- Dashboard -->
+
+	<action name="beforeLeadPie">
+             <result>/view/Over2Cloud/WFPM/lead/dashboard/leadPieChart.jsp</result>
+     </action>
+     
+     <action name="beforeLeadPie12345">
+             <result>/view/Over2Cloud/WFPM/lead/dashboard/leadpiezoom.jsp</result>
+     </action>
+     
+     
+     <action name="piechartdata"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" method="beforeLeadPie">
+             <result name="success" type="json"><param name="root">jsonArray</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+	<!--  <action name="beforeLeadPie"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" 
+     		 method="beforeLeadPie">
+             <result name="success">/view/Over2Cloud/WFPM/lead/dashboard/leadPieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action> -->
+    
+    
+    <action name="beforeLeadFactorPie">
+             <result>/view/Over2Cloud/WFPM/lead/dashboard/leadPieChartFactor.jsp</result>
+     </action>
+     
+     <action name="beforeLeadPiefactorzoom">
+             <result>/view/Over2Cloud/WFPM/lead/dashboard/leadpiefactorzoom.jsp</result>
+     </action>
+    
+    <action name="piechartFactor"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction"  method="beforeLeadFactorPie">
+         <result name="success" type="json"><param name="root">jsonArray1</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+    
+    <!-- <action name="beforeLeadFactorPie"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" 
+     		 method="beforeLeadFactorPie">
+             <result name="success">/view/Over2Cloud/WFPM/lead/dashboard/leadPieChartFactor.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action> -->
+     
+     <action name="beforeshowLeadFactorTable"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" 
+     		 method="beforeLeadFactorPie">
+             <result name="success">/view/Over2Cloud/WFPM/lead/dashboard/leadFactorTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeLeadFactorTable"
+			class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" method="beforeLeadFactorTable">
+			<result name="success" type="json"><param name="root">finalDataList</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+     
+     
+     <action name="beforeshowLeadStatusTable"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" 
+     		 method="beforeLeadPie">
+             <result name="success">/view/Over2Cloud/WFPM/lead/dashboard/leadTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+	<action name="beforeLeadTable"
+			class="com.Over2Cloud.ctrl.wfpm.lead.LeadDashboardAction" method="beforeLeadTable">
+			<result name="success" type="json"><param name="root">finalDataList</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+
+
+
+<!-- Dashboard -->
+
+	<action name="leadmasmailaction">
+    	<result>/view/Over2Cloud/WFPM/lead/masmailpage.jsp</result> 
+    </action>
+       
+       
+	<action name="leadmasmailaction">
+    	<result>/view/Over2Cloud/WFPM/lead/massMailSMS.jsp</result> 
+    </action>
+      <action name="sendMailAndSMS" class="com.Over2Cloud.ctrl.wfpm.lead.SendMailandsmsAction" method="sendSMSandMail">
+      	<result name="success">/view/success.jsp</result>
+        <result name="error">/view/error.jsp</result>
+	    <result name="login">/view/invalidSession.jsp</result>
+      </action>
+     
+     <action name="fetchAllLead"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="fetchAllLead">
+             <result name="success" type="json"><param name="jsonArray">jsonArray</param></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="addLeadContacts"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="addLeadContacts">
+        	<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="viewLeadContact"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="viewLeadContact">
+        	<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="fetchSubIndustry"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="fetchSubIndustry">
+        	<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="leadFullView"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="leadFullView">
+        	<result name="success">/view/Over2Cloud/WFPM/lead/fullView/leadFullView.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="fetchLeadEmail"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="fetchLeadEmail">
+        	<result name="success" type="json"><param name="email">email</param> </result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     
+	<!-- Edit Lead -->
+	<action name="beforeLeadEdit"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="beforeLeadEdit">
+        	<result name="success">/view/Over2Cloud/WFPM/lead/edit/editLeadMgmt.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>      
+     <action name="editLead"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="editLead">
+        	<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>  
+     <action name="editLeadContact"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="editLeadContact">
+        	<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+		 <action name="validateLeadTimeForOffering" class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		method="validateLeadTimeForOffering">
+             <result name="success" type="json"><param name="timestatuslead">timestatuslead</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+   		 </action>
+   		 <action name="fetchReferredName" class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction"
+			method="fetchReferredName">
+			<result name="success" type="json">
+				<param name="root">jsonArray</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+	 </action>  
+</package>
+</struts>

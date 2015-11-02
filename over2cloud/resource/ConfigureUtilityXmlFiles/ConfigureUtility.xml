@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="configure" extends="struts-default,json-default" namespace="/view/Over2Cloud/ConfigureUtility">
+
+	     <action name="addconfigureUtility" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="configureUtilityAdd">
+			<result name="success">/view/Over2Cloud/ConfigureUtility/configureUtility.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="dailyUtilityAdd" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="dailyUtilityAdd">
+			<result name="success">/view/Over2Cloud/ConfigureUtility/dailyUtility.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="beforeViewConfigureGrid" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="beforeViewConfigureGrid">
+			<result name="success">/view/Over2Cloud/ConfigureUtility/viewConfigureUtility.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="beforeViewdailyGrid" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="beforeViewdailyGrid">
+			<result name="success">/view/Over2Cloud/ConfigureUtility/viewDailyUtility.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="getAssociateNameAction" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="getAssociateNameAction" >
+      		 <result name="success" type="json"><param name="root">jsonArr</param> </result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+        </action>
+  
+  <action name="configureAddAction" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="configureAddAction" >
+      		<result name="success">/view/success.jsp</result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+  <action name="insertDataFordailyUtility" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="insertDataFordailyUtility" >
+      		<result name="success">/view/success.jsp</result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+  
+  <action name="viewDailyConfigureDataGrid" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="viewDailyConfigureDataGrid" >
+      		<result name="success" type="json"></result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+  
+  <action name="viewConfigureUtilityDataGrid" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="viewConfigureUtilityDataGrid" >
+      		<result name="success" type="json"></result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+		
+  <action name="modifyConfigureUtility" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="modifyConfigureUtility" >
+      		<result name="success" type="json"></result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+  
+  <action name="modifyDailyUtility" class="com.Over2Cloud.ctrl.configureUtility.ConfigureUtility" method="modifyDailyUtility" >
+      		<result name="success" type="json"></result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+		
+	</package>
+	
+	
+
+
+</struts>

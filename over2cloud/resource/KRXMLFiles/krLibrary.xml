@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="krLibrary" extends="struts-default,json-default" namespace="/view/Over2Cloud/KRLibraryOver2Cloud">
+
+	<!-- START: Rahul 01-10-2013 -->
+	
+		<action name="groupHeaderKR"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="beforeGroupViewHeader">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/group/groupViewHeader.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="kRViewGroup"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="brforeKRGroupView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/group/groupView.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="viewSubGroupGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="viewSubGroupGrid">
+          <result name="success" type="json" ></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    	<action name="viewGroupGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="viewGroupGrid">
+          <result name="success" type="json" ></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="brforeKRGroupAdd"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="brforeKRGroupAdd">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/group/createKRGroup.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="addKrGroup"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="addKrGroup">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="getGroupAbbr"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="getGroupAbbr">
+    	<result name="success" type="json"><param name="root">abbreName</param></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+	<action name="fetchGroup"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="fetchGroup">
+          <result name="success" type="json"><param name="root">jsonArray</param></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="fetchDocument"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="fetchDocument">
+         <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/changeJsp/docName.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    	<action name="getEmpName"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="getEmployeeName">
+         <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/changeJsp/onChangeEmployee.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="addKrSubGroup"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="addKrSubGroup">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="addStartingId"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="addStartingId">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="modifyGroupGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="modifyGroupGrid">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="modifySubGroupGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRGroupAction" method="modifySubGroupGrid">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="viewModifyKrUpload"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="viewModifyKrUpload">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforeKRUpload"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="beforeKRUploadData">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/KRUpload.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="uploadKRdata"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="uploadKRdata">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+   <!--    <action name="confirmKR"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="confirmKR">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/confirmationPageKR.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action> -->
+    
+     <action name="krShareAdd"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="krShareAdd">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+       <action name="beforeKRUploadViewHeader"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="beforeKRUploadViewHeader">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/KRUploadViewHeader.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+      <action name="beforeKRUploadView"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="krUploadViewGrid">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/KRUploadView.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+      <action name="fullViewKr"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="fullViewKr">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/fullViewKr.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="showContactDetail"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="showContactDetail">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/fullViewKr.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="krUploadViewData"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="krUploadViewData">
+          <result name="success" type="json" ></result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="beforeKRLibraryAdd"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKRLibraryAdd">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/createKRAdd.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    <action name="shareFromLibrary"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKRLibraryAdd">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/createShareFromLibrary.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="getSubGrp"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="getSubGrp">
+         <result name="success" type="json"><param name="root">jsonArray</param> </result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="getKRName"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="fetchKRName">
+         <result name="success" type="json"><param name="root">jsonArray</param> </result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	
+<!-- 	<action name="getEmpName"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="getEmployeeName">
+         <result name="success" type="json"><param name="root">jsonArray</param> </result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action> -->
+    <action name="krUpload"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="krUpload">
+           <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     
+     
+       <action name="beforeKrViewHeaderPage"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKrViewHeaderPage">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/krSharedHeader.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+     
+     <action name="beforeKrView"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKRView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/krSharedByMe.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewKrInGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="viewKRInGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="downloadReport"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="scoreDownloadReport">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/downloadScore.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+   
+    <action name="viewKrInGridDownload"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="viewKrInGridDownload">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+    <action name="shareReport"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="scoreDownloadReport">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/shareScore.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="viewKrInGridShare"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="viewKrInGridShare">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="editReport"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="scoreDownloadReport">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krAdd/editScore.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="viewKrInGridEdit"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="viewKrInGridEdit">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="actionableViewHeaderPage"  class="com.Over2Cloud.ctrl.krLibrary.KRActionable" method="actionableViewHeaderPage">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/Actionable/krActionableHeader.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="beforeKrViewActionable"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKRView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/Actionable/krActionableView.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+      <action name="viewKrInGridActionable"  class="com.Over2Cloud.ctrl.krLibrary.KRActionable" method="viewKRInGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="modifyKrInGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="modifyKRInGrid">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeKrSearch">
+              <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krSearch.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="searchKRByTag"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforeKRSearch">
+              <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krSearch.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="searchKRViaAjax"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="viewSearchKR">
+         <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/searchedKRView.jsp</result>
+         <result name="error">/view/error.jsp</result>
+	     <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="download"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="download">
+    	    <result name="download" type="stream">
+      		<param name="contentType">application/octet-stream</param>
+      		<param name="inputName">fileInputStream</param>
+      		<param name="contentDisposition">attachment;filename=%{fileName}</param>
+      		<param name="bufferSize">4096</param>
+    	    </result>
+    	<result name="login">/view/common_pages/invalidSession.jsp</result>
+    	<result name="error">/view/common_pages/error.jsp</result>
+        <result name="success">/view/success.jsp</result>
+   </action>
+   
+      <action name="downloadLiabrary"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="downloadLiabrary">
+    	    <result name="download" type="stream">
+      		<param name="contentType">application/octet-stream</param>
+      		<param name="inputName">fileInputStream</param>
+      		<param name="contentDisposition">attachment;filename=%{fileName}</param>
+      		<param name="bufferSize">4096</param>
+    	    </result>
+    	<result name="login">/view/common_pages/invalidSession.jsp</result>
+    	<result name="error">/view/common_pages/error.jsp</result>
+        <result name="success">/view/success.jsp</result>
+   </action>
+   
+   
+    <action name="modifyPrvlg"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="modifyPrvlg">
+         <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/modifyPrvlg.jsp</result>
+         <result name="error">/view/error.jsp</result>
+	     <result name="login">/view/invalidSession.jsp</result>
+     </action>
+   <!--  For Take Action    -->
+      <action name="takeActionFromLeftPanel"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforeKRView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/downloadedKRForTakeAction.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+      <action name="takeAction" class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforeTakeAction">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/takeAction.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+ <action name="krTakeAction"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="krTakeAction">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforekrModify"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforekrModify">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krModify.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="beforeModifyUpload" class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforeModifyUpload">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/krModifyUpload.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="afterModifyUploadKR" class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="afterModifyUploadKR">
+          <result name="success">/view/success.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <action name="beforeKrActionTaken"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="beforeKrActionTakenReport">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/actionTakenReport.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewKRReportInGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="viewKRReportInGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="modifyReportInGrid"  class="com.Over2Cloud.ctrl.krLibrary.KRAction" method="modifyReportInGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeDownload">
+         <result>/view/Over2Cloud/KRLibraryOver2Cloud/downloadKrconfirmation.jsp</result>
+     </action>
+    
+      <action name="beforeKRDashboard"  class="com.Over2Cloud.ctrl.krLibrary.KRDashboardAction" method="beforeDashboard">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/dashboardPages/krDashboard.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+     <action name="beforeKRDashboardModify"  class="com.Over2Cloud.ctrl.krLibrary.KRDashboardAction" method="beforeDashboardModified">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/dashboardPages/krDashboardMain.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    
+    <!-- DASHBOARD WORK START HEREE -->
+    
+     <action name="beforeFullViewDashboard"  class="com.Over2Cloud.ctrl.krLibrary.KRShareAction" method="beforeKRView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/dashboardPages/krDashboardFullView.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewKrInGridDashboard"  class="com.Over2Cloud.ctrl.krLibrary.KRDashboardAction" method="viewKrInGridDashboard">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeFullViewDashboardTotal"  class="com.Over2Cloud.ctrl.krLibrary.KRUploadAction" method="beforeKRUploadView">
+          <result name="success">/view/Over2Cloud/KRLibraryOver2Cloud/dashboardPages/krDashboardTotalKRFull.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewKrUploadDash"  class="com.Over2Cloud.ctrl.krLibrary.KRDashboardAction" method="viewKrUploadDash">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+	<!-- END: Rahul 01-10-2013 -->
+	
+	</package>
+ </struts>

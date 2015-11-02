@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmMaster" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/masters">
+     <action name="beforeAssociateStatusAdd"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="beforeAssociateStatusAdd">
+             <result name="success">/view/Over2Cloud/WFPM/Masters/associateStatusMaster.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      
+      
+       <action name="associateStatusAddMaster"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="associateStatusAddMaster">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+     
+      <action name="beforeAssociateStatusView"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="beforeAssociateStatusView">
+             <result name="success">/view/Over2Cloud/WFPM/Masters/viewAssociateStatusMaster.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewAssociateGrid"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="viewAssociateGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="viewModifyAssociate"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="viewModifyAssociate">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="associateCategoryCostMapping"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="associateCategoryCostMapping">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeFetchAssociateCatCost"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="beforeFetchAssociateCatCost">
+            	<result name="success">/view/Over2Cloud/WFPM/Masters/viewAssociateCatCost.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchAssociateCatCost"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="fetchAssociateCatCost">
+            	<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="editAssociateCatCost"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="editAssociateCatCost">
+            	<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Anoop, 26-7-2013 -->
+     
+     <action name="fetchAssociateType"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="fetchAssociateType">
+            	<result name="success" type="json"><param name="root">jsonArray</param></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addAssociateSubType"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="addAssociateSubType">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateSubTypeGrid"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="viewAssociateSubTypeGrid">
+            	<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="modifyAssociateSubTypeGrid"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="modifyAssociateSubTypeGrid">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchAssociateSubType"  class="com.Over2Cloud.ctrl.wfpm.masters.CommonMasters" method="fetchAssociateSubType">
+            	<result name="success" type="json"><param name="root">jsonArray</param></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+</package>
+</struts>

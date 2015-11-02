@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="clientsupportMgmt" extends="struts-default,json-default"
+		namespace="/view/Over2Cloud/wfpm/clientsupport">
+
+		<action name="beforeclientDetails" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeClientDetails">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewClientSupport.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		<action name="searchshowClientSupportdata" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="searchShowClientSupportData">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewSearchClientSupport.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		
+		<action name="viewClientSupportGrid" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" method="viewClientSupportGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeviewSupportType" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeviewSupportType">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewClientSupportType.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		<action name="searchshowClientSupportType" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeviewSupportType">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewSearchClientSupportType.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		
+		<action name="viewClientSupportTypeGrid" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" method="searchshowClientSupportType">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		
+		<action name="beforeAddClientSupportType" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeAddClientSupportType">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/addClientSupportType.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		  <action name="addClientSupportType" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="addClientSupportType">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     <action name="viewclientShow" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="viewclientShow">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewclientClickShow.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>	
+		 <action name="viewofferingShow" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="viewOfferingShow">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewofferingShow.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		 <action name="viewcontactClickShow" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="viewcontactClickShow">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewcontactClickShow.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		 <action name="supportStatusView" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="viewsupportStatusView">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/viewsupportStatusView.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		 <action name="viewconversionDetails" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="conversionDetails">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/conversionDetails.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		<action name="downloadPo" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" method="docDownload">
+			<result name="success" type="stream">
+			    <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="${fileName}"</param>
+                <param name="bufferSize">4096</param>
+			</result>
+			    <result name="error">/view/error.jsp</result>
+                <result name="login">/view/invalidSession.jsp</result>
+	   </action>
+		<!--<action name="downloadPo" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" method="downLoadPO">
+		<result name="success" type="stream">
+		  <param name="contentType">application/octet-stream</param>
+		  <param name="inputName">fileInputStream</param>
+		  <param name="contentDisposition">attachment;filename="Cancer Awareness Day Offer.png"</param>
+		  <param name="bufferSize">1024</param>
+		</result>
+	   </action>
+	    -->
+	    <action name="beforeTakeActionSupport" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeTakeActionSupport">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/beforeTakeActionSupport.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+	    <action name="actionOnSupport" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="actionOnSupport">
+			<result name="configDelivery">/view/Over2Cloud/WFPM/clientSupport/beforeConfigureDelivery.jsp</result>
+			<result name="configSupport">/view/Over2Cloud/WFPM/clientSupport/beforeConfigureSupport.jsp</result>
+			<result name="extendedSupport">/view/Over2Cloud/WFPM/clientSupport/beforeExtentedSupport.jsp</result>
+			<result name="holdSupport">/view/Over2Cloud/WFPM/clientSupport/beforeHoldSupport.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		 <action name="loadEmploye"  class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" method="getEmployeeDetails">
+    	<result name="success" type="json"><param name="root">jsonArray</param></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+   	 </action>
+   	 
+   	  <action name="takeactionOnsupport" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="takeactionOnClientSupport">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	<action name="clientStar" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="clientStar">
+             <result name="success" type="json"><param name="root">numberOfStar</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	<action name="degreeOfInfluence" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="degreeOfInfluence">
+             <result name="success" type="json"><param name="root">numberOfStar</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	 <action name="beforeSupportSMSSend" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeSupportSMSSend">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/supportSMSSend.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+     	  <action name="beforeSupportMailSend" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction"
+			method="beforeSupportMailSend">
+			<result name="success">/view/Over2Cloud/WFPM/clientSupport/supportMailSend.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		 <action name="sendEmailAction" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="sendEmailAction">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	<action name="sendSMSAction" class="com.Over2Cloud.ctrl.wfpm.client.ClientSupportAction" 
+     		method="sendSMSAction">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+   	 
+		
+</package>
+</struts>

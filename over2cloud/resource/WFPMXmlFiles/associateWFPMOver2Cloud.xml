@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmAssociate" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/Associate">
+     
+     <action name="beforeAssociateAdd"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeAssociateAdd" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/addAssociateMgmt.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addAssociate"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="addAssociate" >
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="validateTimeForOffering" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		method="validateTimeForOffering">
+             <result name="success" type="json"><param name="status">timestatus</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchLocation"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="fetchLocation" >
+             <result name="success" type="json"><param name="root">locationJsonArray</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchAssociate"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="fetchAssociate" >
+             <result name="success" type="json"><param name="root">locationJsonArray</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addOffering"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="addOffering" >
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addContacts"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="addContacts" >
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeAssociateView"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeAssociateView" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/viewAssociate.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="searchAssociateView"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeAssociateView" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/viewsearchAssociate.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateGrid"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewAssociateGrid" >
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewModifyAssociate"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewModifyAssociate" >
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateContactGrid"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewAssociateContactGrid" >
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateClientContact"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewAssociateClientContact" >
+             <result name="success" type="json" ></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeContactTakeAction"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeContactTakeAction" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/fullHistoryForAssociate.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateAction"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewASooActionDash" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/fullHistoryForAssociate1.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateContactGrid"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewAssociateContactGrid" >
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewModifyAssociate"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewModifyAssociate" >
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewModifyAssociateContact"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewModifyAssociateContact" >
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewAssociateFullHistory"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="viewAssociateFullHistory" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/fullHistoryForAssociate.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeContactTakeAction"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeContactTakeAction" >
+             <result name="success">/view/Over2Cloud/WFPM/associate/associateTakeaction.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="takeActionOnAssociate" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="takeActionOnAssociate">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="convertAssociateForOffering" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="convertAssociateForOffering">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="finishAssociateActivity" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="finishAssociateActivity">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="convertToLost" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="convertToLost">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="convertToAssociate" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="convertToAssociate">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     
+     
+     
+     <action name="convertToAsso"  class="com.Over2Cloud.ctrl.wfpm.associate.TakeActionOnAssociate" method="convertToAsso">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>  
+     
+     
+     <action name="associateDashboard"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeDashboardView">
+            	<result name="success">/view/Over2Cloud/WFPM/associate/associateDashboard.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+ 
+ 	<action name="beforeAssociateExcelUpload"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="beforeAssociateExcelUpload">
+             <result name="success">/view/Over2Cloud/WFPM/associate/associateExcelUpload.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="associateActivities"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" method="associateActivities">
+             <result name="success">/view/Over2Cloud/WFPM/associate/associateActivities.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    <!-- Dashboard -->
+    <action name="beforeAssociateActivityPie">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/activityPieChart.jsp</result>
+    </action> 
+    
+    <action name="beforeActivityPiezoom">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/activitypiezoom.jsp</result>
+    </action> 
+    
+    
+    
+    
+    <action name="beforeActivityPie"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeActivityPie">
+             <result name="success" type="json"><param name="root">jsonArray3</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforeActivityTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeActivityPie">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/activityTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    <action name="beforeAssociateStatusPieChart" >
+		<result name="success">/view/Over2Cloud/WFPM/associate/dashboard/statusPieChart.jsp</result>
+	 </action>
+	 
+	 
+	 <action name="beforeStatusPiezoom" >
+		<result name="success">/view/Over2Cloud/WFPM/associate/dashboard/statuspiezoom.jsp</result>
+	 </action>
+	 
+    
+    <action name="beforeStatusPie"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" method="beforeStatusPie">
+             <result name="success" type="json"><param name="root">jsonArray1</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    
+    
+    
+    <action name="beforeStatusTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeStatusPie">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/statusTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforeShowOffWrtAssoPie"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeShowOffWrtAssoPie">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/offWrtAssoPieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforeShowOffWrtAssoTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeShowOffWrtAssoPie">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/offWrtAssoTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforeShowAssociateBirthdayTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeShowAssociateBirthdayTable">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/birthdayTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    <action name="beforeShowAssociateAnniversaryTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+    		method="beforeShowAssociateAnniversaryTable">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/anniversaryTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <!-- Associate -->
+      <action name="beforeAssociatePieData">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/associatePieChart.jsp</result>
+     </action>
+     
+     
+     <action name="beforeAssociatePiezoom">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/associatepiechartzoom.jsp</result>
+     </action>
+     
+     <action name="beforeAssociatePie" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" method="beforeAssociatePie">
+		<result name="success" type="json"><param name="root">jsonArray2</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	
+     <action name="beforeAssociateTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+     		 method="beforeAssociateTable">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/associateTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="associateRatingChart"
+			class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" method="beforeAssociateTable">
+			<result name="success" type="json"><param name="root">finalDataList</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+     
+     <action name="associateActivityChart"
+			class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" method="beforeActivityPie">
+			<result name="success" type="json"><param name="root">finalDataList</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+     
+     
+     <action name="fetchAssoCategory"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="fetchAssoCategory">
+             <result name="success" type="json"><param name="root">locationJsonArray</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchLastStatusForOffering"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="fetchLastStatusForOffering">
+			 <result name="success" type="json"><param name="status">status</param></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Edit Associate -->
+     <action name="beforeAssociateEdit"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="beforeAssociateEdit">
+             <result name="success">/view/Over2Cloud/WFPM/associate/edit/editAssociateMgmt.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="editAssociate"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="editAssociate">
+			<result name="success">/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+	 <action name="editAssociateContact"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="editAssociateContact">
+			<result name="success">/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>    
+    
+     <action name="showRatingWiseDetails" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+     		method="showRatingWiseDetails">
+             <result name="success">/view/Over2Cloud/WFPM/associate/dashboard/ratingWiseAssociateDetails.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     	 <action name="viewRatingDataGrid" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" 
+     		method="viewRatingDataGrid">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+      <action name="beforeAssociateSourcePie" >
+		<result name="success">/view/Over2Cloud/WFPM/associate/dashboard/associatesourcepiechart.jsp</result>
+	 </action>
+     
+     <action name="associateDataSource" class="com.Over2Cloud.ctrl.wfpm.associate.AssociateDashboardAction" method="getJsonData4AssociateSource">
+		<result name="success" type="json"><param name="root">jsonArray</param></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	
+	<action name="beforeAssociateSourcePieZoom" >
+		<result name="success">/view/Over2Cloud/WFPM/associate/dashboard/associatesourcezoom.jsp</result>
+	 </action>
+     
+    
+</package>
+</struts>

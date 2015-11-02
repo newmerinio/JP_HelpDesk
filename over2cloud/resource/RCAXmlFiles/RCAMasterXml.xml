@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="rcaMaster" extends="struts-default,json-default" namespace="/view/Over2Cloud/RCAOver2Cloud/RCAMaster">
+     
+     <action name="beforeRCAMasterPage"  class="com.Over2Cloud.ctrl.rcaMaster.RCAMasterAction" method="beforeRcaPage">
+            	<result name="success">/view/Over2Cloud/RCAOver2Cloud/createRCAmaster.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="addRCAMaster"  class="com.Over2Cloud.ctrl.rcaMaster.RCAMasterAction" method="rcaMasterAdd">
+         	    <result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+
+	 <action name="beforeRCAMasterView"  class="com.Over2Cloud.ctrl.rcaMaster.RCAMasterAction" method="beforeRCAMasterView">
+	          <result name="success">/view/Over2Cloud/RCAOver2Cloud/viewRCAMaster.jsp</result>
+			  <result name="error">/view/error.jsp</result>
+			  <result name="login">/view/invalidSession.jsp</result>
+	 </action> 
+	 
+	 <action name="rcaMasterViewData" method="viewRcaMaster" class="com.Over2Cloud.ctrl.rcaMaster.RCAMasterAction">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	
+	  <action name="getSubCategory" class="com.Over2Cloud.ctrl.rcaMaster.RCAMasterAction" method="subCategoryData">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+</package>
+</struts>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmDashboard" extends="struts-default,json-default" 
+		 namespace="/view/Over2Cloud/wfpm/dashboard">
+	 <!-- Lead -->	 
+     <action name="beforeLeadPie"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeLeadPie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/leadPieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeLeadPieMax"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeLeadPie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/leadPieChartMax.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeDashboardView"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/leadTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeDashboardViewMax"  class="com.Over2Cloud.ctrl.wfpm.lead.LeadActionControl" 
+     		 method="beforeDashboardView">
+             <result name="success" type="json">/view/Over2Cloud/WFPM/Lead/leadDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Client -->
+     <action name="beforeClientPie"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeClientPie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/clientPieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeClientTable"  class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction" 
+     		 method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/clientTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeClientPieMax"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeClientPie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/clientPieChartMax.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeClientTableMax"  class="com.Over2Cloud.ctrl.wfpm.client.ClientCtrlAction" 
+     		 method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/client/clientDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Associate -->
+     <action name="beforeAssociatePie"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeAssociatePie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/associatePieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeAssociateTable"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/associateTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeAssociatePieMax"  class="com.Over2Cloud.ctrl.login.MainAction" 
+     		 method="beforeAssociatePie">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/associatePieChart.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeAssociateTableMax"  class="com.Over2Cloud.ctrl.wfpm.associate.AssociateCtrlAction" 
+     		 method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/dashboard/associateTable.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <!-- Target vs. achivement report dashboard  -->
+
+	 <!-- Common dashboard -->
+	 
+	<action name="beforeCommonDashboard" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction" 
+			method="beforeCommonDashboard">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/commonDashboard.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchDashboardFullHistory" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction" 
+			method="fetchDashboardFullHistory">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/dashboardFullHistory.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="beforeRescheduleTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/action/rescheduleAction.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="beforeLostTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="beforeLostTakeActon">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/action/lostActiion.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="beforeReassignTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="beforeReassignTakeActon">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/action/reassignAction.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchDashboardActivityList" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchDashboardActivityList">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+			<param name="currDate">currDate</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchActivityHistory" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchActivityHistory">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchContactDetails" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchContactDetails">
+		<result name="success" type="json">
+			<param name="jsonObject">jsonObject</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchOrgnizationDetails" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchOrgnizationDetails">
+		<result name="success" type="json">
+			<param name="jsonObject">jsonObject</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="beforeFullHistory" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="beforeFullHistory">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/dashboardFullHistory.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>	
+	<action name="fetchAllMappedOffering" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchAllMappedOffering">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>	
+	<action name="fetchContactPerson" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchContactPerson">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchActivityByOfferingAndContact" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardAction"
+			method="fetchActivityByOfferingAndContact">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	
+	<!-- Dashboard take action -->
+	<action name="beforeDashboardTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction" 
+			method="beforeDashboardTakeActon">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/beforeTakeAction.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="beforeCloseTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"
+	        method="beforeCloseTakeActon">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/action/closeAction.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="dashboardAction" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"
+	        method="dashboardAction">
+		<result name="success">/view/success.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="beforeConvertToExistingTakeActon" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/action/convertToExisting.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+
+<!-- MOM -->
+	<action name="beforeDashboard" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"
+			method="beforeDashboard">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/momPage.jsp</result>
+		<result name="fsuccess">/view/Over2Cloud/WFPM/dashboard/commonDashboard/momPage1.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<action name="fetchEntityNameAndAddress" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"
+			method="fetchEntityNameAndAddress">
+		<result name="success" type="json">
+			<param name="jsonObject">jsonObject</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+	<!-- 
+	<action name="fetchEntityContactPersonByCTAId" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"
+			method="fetchEntityContactPersonByCTAId">
+		<result name="success" type="json">
+			<param name="jsonArray">jsonArray</param>
+			<param name="jsonArrayOther">jsonArrayOther</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>			
+   -->
+
+<!-- New activity block -->
+	<action name="showActivityBlock" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction"	method="showActivityBlock">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/activityPage.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+				
+	<action name="fetchMissedActivities" class="com.Over2Cloud.ctrl.wfpm.dashboard.DashboardTakeAction" method="fetchMissedActivities">
+		<result name="success">/view/Over2Cloud/WFPM/dashboard/commonDashboard/missed/missedActivityPage.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+
+</package>
+</struts>

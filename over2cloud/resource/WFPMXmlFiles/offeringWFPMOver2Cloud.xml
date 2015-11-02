@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmOffering" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/offering">
+     
+     <action name="beforeOfferingAdd"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="beforeOfferingAdd">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/createOffering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      
+      <!-- Ajax Calling for offering from level 1 to level 4 -->
+      
+      <action name="getallLevel1Offering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="getallLevel1Offering">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/level1Offering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getallLevel2Offering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="getallLevel2Offering">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/level2Offering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getallLevel3Offering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="getallLevel3Offering">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/level3Offering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getallLevel4Offering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="getallLevel4Offering">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/level4Offering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="getallLevel5Offering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="getallLevel5Offering">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/level5Offering.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <!-- Ajax Calling for offering from level 1 to level 4 -->
+      
+      <!-- Level 1to Level 5 Offering adding based on user action -->
+      
+        <action name="level1AddOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="level1AddOffering">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       <action name="level2AddOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="level2AddOffering">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       <action name="level3AddOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="level3AddOffering">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+       <action name="level4AddOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="level4AddOffering">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+       <action name="level5AddOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="level5AddOffering">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <!-- Offering View , Modify, Delet  -->
+      
+      <action name="beforeOfferingView"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="beforeOfferingView">
+             <result name="success">/view/Over2Cloud/WFPM/Offering/offeringView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewLevel1"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewLevel1Offering">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="viewLevel2"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewLevel2Offering">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="viewLevel3"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewLevel3Offering">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="viewLevel4"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewLevel4Offering">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="viewLevel5"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewLevel5Offering">
+               <result name="success" type="json"></result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewModifyLevel1"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewModifyLevel1">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewModifyLevel2"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewModifyLevel2">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewModifyLevel3"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewModifyLevel3">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewModifyLevel4"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewModifyLevel4">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewModifyLevel5"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="viewModifyLevel5">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="addOfferingLevelCostMapping" class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="addOfferingLevelCostMapping">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- For tax mapping with offering, Anoop -->
+     
+     <action name="beforeTaxMapping"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="beforeTaxMapping">
+            	<result name="success">/view/Over2Cloud/WFPM/Offering/taxMapping.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="addTaxMapping"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="addTaxMapping">
+            	<result name="success">/view/success.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+       <action name="fetchTaxForOffering"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="fetchTaxForOffering">
+            	<result name="success">/view/Over2Cloud/WFPM/Offering/taxListForOffering.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Anoop 19-8-2013, Upload offering  -->
+     
+     <action name="beforeOfferingUpload"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="beforeOfferingUpload">
+            	<result name="success">/view/Over2Cloud/WFPM/Offering/offeringUpload.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeOfferingUploadNew"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="beforeOfferingUploadNew">
+            	<result name="success">/view/Over2Cloud/WFPM/Offering/offeringUploadNew1.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="uploadOfferingExcelNew"  class="com.Over2Cloud.ctrl.wfpm.offering.OfferingActionControl" method="uploadOfferingExcelNew">
+           	<result name="success">/view/success.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+     </action>
+	     
+</package>
+
+
+</struts>

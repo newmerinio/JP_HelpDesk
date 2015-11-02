@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="location_mapping" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/EmployeeLocation">
+   
+     <action name="beforeMapEmployee" class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationAction" method="beforeMapEmployee">
+         <result name="success" >/view/Over2Cloud/WFPM/LocationEmployee/createEmployeeLocation.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchEmployee" class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationHelper" method="fetchEmployee">
+         <result name="success" >/view/Over2Cloud/WFPM/LocationEmployee/employee.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="fetchStateMulti" class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationHelper" method="fetchStateMulti">
+         <result name="success" >/view/Over2Cloud/WFPM/LocationEmployee/state.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fetchCityMulti" class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationHelper" method="fetchCityMulti">
+         <result name="success" >/view/Over2Cloud/WFPM/LocationEmployee/city.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchTerritoryMulti" class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationHelper" method="fetchTerritoryMulti">
+         <result name="success" >/view/Over2Cloud/WFPM/LocationEmployee/territory.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="addMappingLocation"  class="com.Over2Cloud.ctrl.wfpm.locationMapping.EmployeeLocationAction" method="addMappingLocation">
+                <result name="success">/view/success.jsp</result>
+                <result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+</package>
+</struts>

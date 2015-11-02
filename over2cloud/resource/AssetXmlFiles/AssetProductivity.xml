@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"></constant>
+<package name="asset/productivity" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Asset_Productivity">
+     <action name="getAnalytics"  class="com.Over2Cloud.ctrl.asset.productivity.AssetProductivity" method="getAnalytics" >
+            	<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset_productivity/analytical_report.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="getAnalyticsGrid"  class="com.Over2Cloud.ctrl.asset.productivity.AssetProductivity" method="getAnalyticsForGrid" >
+            	<result name="employeeSucess">/view/Over2Cloud/AssetOver2Cloud/Asset_productivity/grid_emp_analytics.jsp</result>
+            	<result name="categorySucess">/view/Over2Cloud/AssetOver2Cloud/Asset_productivity/grid_catg_analytics.jsp</result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>        
+    <action name="viewAnalysisDeatil"  class="com.Over2Cloud.ctrl.asset.productivity.AssetProductivity" method="viewAnalysisDeatil" >
+            	<result name="success" type="json"></result>
+				<result name="error">/view/error.jsp</result>
+				<result name="login">/view/invalidSession.jsp</result>
+     </action>
+          
+  
+</package>
+</struts>

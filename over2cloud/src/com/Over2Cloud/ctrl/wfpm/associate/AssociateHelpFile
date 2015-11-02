@@ -1,0 +1,11 @@
+1. Table 'associate_offering_mapping' field 'isConverted' defines whether an associate has been converted to 
+   existing associate or not for a particular product.
+   0 Not converted
+   1 Converted
+2. Table 'associate_takeaction' field 'isFinished' defines whether an action has been completed or not
+   0 Incomplete
+   1 Finished
+      
+
+
+

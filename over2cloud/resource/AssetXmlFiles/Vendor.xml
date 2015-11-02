@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true"/>
+	<package name="vendor" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Asset/Vendor">
+	
+		<action name="createVendorAddPage" method="setAddPageDataFields" class="com.Over2Cloud.ctrl.asset.VendorAction">
+			<result name="Vendor">/view/Over2Cloud/AssetOver2Cloud/Asset/Vendor/createVendor.jsp</result>
+			<result name="VendorType">/view/Over2Cloud/AssetOver2Cloud/Asset/Vendor/createVendorType.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="vendorAddAction" method="vendorAddMaster" class="com.Over2Cloud.ctrl.asset.VendorAction">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="createVendorViewPage" method="beforeVendorView" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/Vendor/viewVendor.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="viewVendorGrid" method="viewVendor" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="modifyVendorGrid" method="modifyVendor" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="createVendorTypeViewPage" method="beforeVendorTypeView" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/Vendor/viewVendorType.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="viewVendorTypeGrid" method="viewVendorType" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="vendorTypeAddAction" method="vendorTypeAddMaster" class="com.Over2Cloud.ctrl.asset.VendorAction">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		
+		<action name="modifyVendorTypeGrid" method="modifyVendorTypeGrid" class="com.Over2Cloud.ctrl.asset.VendorGridEntry">
+			<result name="success">>/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+	</package>
+</struts>

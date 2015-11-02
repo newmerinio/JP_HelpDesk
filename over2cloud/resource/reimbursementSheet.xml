@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <constant name="struts.devMode" value="true" />
+  <package name="Reimbursement" extends="struts-default,json-default" namespace="/view/Over2Cloud/Reimbursement">
+
+
+  <action name="particularsView"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="particularsViewColum">
+             <result name="success">/view/Over2Cloud/Reimbursement/viewPurpose.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="particularsViewInGrid"
+			class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="particularsViewDataInGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+  
+  <action name="printReimbInfo12345678" class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="getReimbDetail4Print123" >
+           <result name="success">/view/Over2Cloud/Reimbursement/printReimburse.jsp</result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   </action>
+
+ <!--<action name="reimbursementView"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="createReimbursementView">
+             <result name="success">/view/Over2Cloud/Reimbursement/createReimbursement.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="addDataEntryssssssss"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="editReimbursement">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+ 
+ --><action name="beforeAddPartculars"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="beforeParticularsView">
+             <result name="success">/view/Over2Cloud/Reimbursement/createPurpose.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="beforeAddReimbursement"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="beforeAddReimbursement">
+             <result name="success">/view/Over2Cloud/Reimbursement/createAddRembussment.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+   <action name="beforeReimbursementview"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="beforeReimbursementview">
+             <result name="success">/view/Over2Cloud/Reimbursement/viewReimbursement.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="reimbursementDataInGrid"
+			class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="reimbursementDataInGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+  <action name="addPurposeMaster"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="addPurposeMaster">
+            <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="addReimbursement"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="addReimbursementData">
+            <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+  
+  <action name="getAttachmentTask" class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="getAttachmentdownloadForTask" >
+            <result name="success">/view/Over2Cloud/Reimbursement/attachmentForExpences.jsp</result>
+            <result name="notfound">/view/success.jsp</result>
+            <result name="error" >/view/error.jsp</result>
+            <result name="login" >/view/invalidSession.jsp</result>
+     </action>
+
+<action name="downloadattachedment"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="downloadFile" >
+        <result name="download" type="stream">
+              <param name="contentType">application/octet-stream</param>
+              <param name="inputName">fileInputStream</param>
+              <param name="contentDisposition">attachment;filename=%{fileName}</param>
+              <param name="bufferSize">4096</param>
+        </result>
+        <result name="login">/view/invalidSession.jsp</result>
+        <result name="error">/view/error.jsp</result>
+        <result name="success">/view/success.jsp</result>
+      </action>
+      
+      <action name="beforeReimbursementdetails"  class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="beforeReimbursementdetails">
+             <result name="success">/view/Over2Cloud/Reimbursement/createExpencesDetails.jsp</result>
+             <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+  </action>
+
+<!--<action name="viewReimbursementInGrid" class="com.Over2Cloud.ctrl.particulasAction.ParticularsAction" method="veiwGridData">
+           <result name="success" type="json"></result>
+           <result name="error">/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+</action>
+	
+  --></package>
+
+</struts>

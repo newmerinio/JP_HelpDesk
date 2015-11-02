@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="patientActionActivity" extends="struts-default,json-default" namespace="/view/Over2Cloud/patientActivity">
+     
+     
+     
+     <!-- Submitted Feedback All detailsl  -->
+		<action name="viewSubmittedData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="viewSubmittedData">
+            <result name="success" >/view/Over2Cloud/WFPM/Patient/viewFeedbackSubmittedAll.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+     	
+     	<action name="viewFeedbackSubmittedAll" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchAllSubmittedFeedback">
+			       <result name="success" type="json"></result>
+		            <result name="error">/view/error.jsp</result>
+           			 <result name="login">/view/invalidSession.jsp</result>
+        </action>
+
+     <!-- view Ankit2015 -->
+     	
+     		<action name="viewPatientheader" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="viewHeader">
+            <result name="success" >/view/patientActivity/activityDashboard.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       		 </action>
+       		 
+		<action name="fetchDashboardActivityList" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchPatientColList">
+            <result name="success" type="json">
+			<param name="dataArray">dataArray</param>
+			<param name="currDate">currDate</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+        </action>
+        
+        <action name="fetchDataActivity" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchDataActivity">
+            <result name="success" type="json">
+			<param name="dataArray">dataArray</param>
+			<param name="currDate">currDate</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+        </action>
+		
+		
+        <action name="fetchMissedDataActivity" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchMissedDataActivity">
+            <result name="success" type="json">
+			<param name="dataArray">dataArray</param>
+		</result>
+		<result name="login">/view/invalidSession.jsp</result>
+        </action>
+		
+		<action name="backFormViewChange" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="backFormView">
+          <result name="success" type="json"><param name="root">answerMap</param></result>
+       </action>
+		
+		
+		<action name="viewQuestionnaireForms" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="viewQuestionnaireForms">
+            <result name="page1" >/view/feedbackforms/feedbackformSetA1.jsp</result>
+            <result name="page2" >/view/feedbackforms/feedbackformTab2.jsp</result>
+            <result name="page3" >/view/feedbackforms/feedbackformTab21.jsp</result>
+            <result name="page4" >/view/feedbackforms/feedbackformTab3.jsp</result>
+            <result name="page5" >/view/feedbackforms/feedbackformTab4.jsp</result>
+            <result name="page6" >/view/feedbackforms/feedbackformTab51.jsp</result>
+            <result name="page7" >/view/feedbackforms/feedbackformTab52.jsp</result>
+            <result name="page8" >/view/feedbackforms/feedbackformTab6.jsp</result>
+            <result name="page9" >/view/feedbackforms/feedbackformTab7.jsp</result>
+            <result name="page10" >/view/feedbackforms/feedbackformTab8.jsp</result>
+            <result name="page11" >/view/feedbackforms/feedbackformTab9.jsp</result>
+            <result name="page12" >/view/feedbackforms/feedbackformTab91.jsp</result>
+            <result name="success" >/view/feedbackforms/feedbackformSetA1.jsp</result>
+            
+            </action>
+            
+            
+            
+           <action name="reviewQuestionnaireForms" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="viewQuestionnaireForms">
+            <result name="page1" >/view/feedbackformreview/feedbackformSetA1.jsp</result>
+            <result name="page2" >/view/feedbackformreview/feedbackformTab2.jsp</result>
+            <result name="page3" >/view/feedbackformreview/feedbackformTab21.jsp</result>
+            <result name="page4" >/view/feedbackformreview/feedbackformTab3.jsp</result>
+            <result name="page5" >/view/feedbackformreview/feedbackformTab4.jsp</result>
+            <result name="page6" >/view/feedbackformreview/feedbackformTab51.jsp</result>
+            <result name="page7" >/view/feedbackformreview/feedbackformTab52.jsp</result>
+            <result name="page8" >/view/feedbackformreview/feedbackformTab6.jsp</result>
+            <result name="page9" >/view/feedbackformreview/feedbackformTab7.jsp</result>
+            <result name="page10" >/view/feedbackformreview/feedbackformTab8.jsp</result>
+            <result name="page11" >/view/feedbackformreview/feedbackformTab9.jsp</result>
+            <result name="page12" >/view/feedbackformreview/feedbackformTab91.jsp</result>
+            <result name="success" >/view/feedbackformreview/feedbackformSetA1.jsp</result>
+            
+            </action>
+		
+		
+		
+		
+		<action name="submitFeedback" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="submitFeedback">
+            <result name="success" >/view/success.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+       </action>
+     <action name="fetchFeedbackData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchFeedbackData">
+            <result name="success" type="json">
+					<param name="dataArray">dataArray</param>
+			</result>
+		<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+       <action name="submitFeedbackNew" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="submitFeedbackNew">
+            <result name="page1" >/view/feedbackforms/feedbackformSetA1.jsp</result>
+            <result name="page2" >/view/feedbackforms/feedbackformTab2.jsp</result>
+            <result name="page3" >/view/feedbackforms/feedbackformTab21.jsp</result>
+            <result name="page4" >/view/feedbackforms/feedbackformTab3.jsp</result>
+            <result name="page5" >/view/feedbackforms/feedbackformTab4.jsp</result>
+            <result name="page6" >/view/feedbackforms/feedbackformTab51.jsp</result>
+            <result name="page7" >/view/feedbackforms/feedbackformTab52.jsp</result>
+            <result name="page8" >/view/feedbackforms/feedbackformTab6.jsp</result>
+            <result name="page9" >/view/feedbackforms/feedbackformTab7.jsp</result>
+            <result name="page10" >/view/feedbackforms/feedbackformTab8.jsp</result>
+            <result name="page11" >/view/feedbackforms/feedbackformTab9.jsp</result>
+            <result name="page12" >/view/feedbackforms/feedbackformTab91.jsp</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="main">/view/feedbackforms/agreementview.jsp</result>
+            </action>
+		
+
+	<action name="downloadReport" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="downloadReport">	
+    	<result name="success" type="stream">
+	  	<param name="contentType">application/octet-stream</param>
+	  	<param name="inputName">fis</param>
+	  	<param name="contentDisposition">attachment;filename=%{reportFileName}</param>
+	  	<param name="bufferSize">1024000</param>
+		</result>
+	<result name="error">/view/success.jsp</result>
+	</action>
+     
+     <action name="fetchHistoryData" class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="fetchHistoryData">
+            <result name="success" type="json">
+					<param name="dataArray">dataArray</param>
+			</result>
+		<result name="login">/view/invalidSession.jsp</result>
+       </action>
+
+     <action name="beforepatientreportView" class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="beforePaientReportView">
+             <result name="success">/crmhelpdesk_dashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+      
+       <action name="jsonChartData4BloodGroupCounters"  class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="getBarChart4BloodGroupCounters">
+ 			<result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+        <action name="getBloodTableDataCounters"  class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="getBarChart4BloodGroupCounters">
+	        <result name="success" >/view/patientActivity/maximizeTableData.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+     
+       <action name="jsonChartData4ActivityCounters"  class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="getBarChart4DeptCounters">
+	        <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+       
+         <action name="jsonChartData4AgeCounters"  class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="getBarChart4AgeCounters">
+	        <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+      
+     <action name="getTableDataCounters"  class="com.Over2Cloud.ctrl.patientactivity.PatientDashboardActivityAction" method="getTableDataCounters">
+	        <result name="success" >/view/patientActivity/maximizeTableData.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+       </action>
+      
+      
+  <action name="getDoctorList"  class="com.Over2Cloud.ctrl.patientactivity.PatientActivityAction" method="getDoctorList" >
+            <result name="success" type="json"><param name="root">jsonArray</param></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+   </action>
+   
+         
+     </package>
+</struts>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmUserHierarchy" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/userHierarchy">
+     
+     <action name="beforeUserHierarchy"  class="com.Over2Cloud.ctrl.wfpm.userHierarchy.UserHierarchyAction" 
+     		 method="beforeUserHierarchy">
+             <result name="success">/view/Over2Cloud/WFPM/userHierarchy/userHierarchyMainPage.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+</package>
+</struts>

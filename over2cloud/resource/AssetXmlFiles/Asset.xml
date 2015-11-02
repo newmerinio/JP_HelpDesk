@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="asset" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Asset">
+
+		<action name="beforeAssetAdd" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAsset.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+
+		<action name="assetActionByForm" class="com.Over2Cloud.ctrl.asset.AssetAction" method="addAsset">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="assetDetailByAjax" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getAssetDetailById">
+			<result name="success" type="json">
+				<param name="root">assetDetailMap</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="AmountCalculateAjax" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="calculateTotalAmount">
+			<result name="success" type="json">
+				<param name="root">totalAmount</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+
+		<action name="vendorDetailByAjax" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getVendorDetailById">
+			<result name="success" type="json">
+				<param name="root">vendorDetailMap</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		<action name="createAssetTypeAddPage" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="createAssetTypePage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetType.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+ 		<action name="assetTypeAddAction" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="addAssetType">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="createAssetTypeView" method="createAssetTypeViewPage" class="com.Over2Cloud.ctrl.asset.SupportCatgAction">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAssetType.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+ 		
+ 		<action name="viewAssetTypeGrid" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="viewAssetType">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+ 		<action name="modifyAssetTypeGrid" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="modifyAssetType">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSupportCatgAddPage" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="createSupportCatgPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateSupportCatg.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="categoryAddAction" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="addSupportCatg">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSuportCatgView" method="createCatgViewPage" class="com.Over2Cloud.ctrl.asset.SupportCatgAction">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewSupportCatg.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewSupportCatgGrid" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="viewSupportCatg">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifySupportCatgGrid" class="com.Over2Cloud.ctrl.asset.SupportCatgAction" method="modifySupportCatg">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+
+		<action name="createAllotmentAddPage" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetAllotment.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="assetAllotmentAction" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="addAssetAllotment">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createAllotOnRepairAddPage" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAllotOnRepair.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createFreeReallotAddPage" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="createFreeReallotPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateFreeAllot.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="reallotmentPage" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateReallot.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createRepairAddPage" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="createRepairPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetRepair.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="assetRepairAction" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="addAssetRepair">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createRepairedAddPage" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="createRepairedPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetRepaired.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="assetRepairedAction" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="addAssetRepair">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createAssetViewPage" class="com.Over2Cloud.ctrl.asset.AssetAction" method="beforeAssetView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAsset.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewAssetGridData" class="com.Over2Cloud.ctrl.asset.AssetAction" method="viewAsset">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifyAsset" class="com.Over2Cloud.ctrl.asset.AssetAction" method="modifyAsset">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="createSupportViewPage" class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="beforeSupportView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewSupport.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="modifySupportData" class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="modifySupport">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createAllotViewPage" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="beforeAllotView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAllotment.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewAllotmentData" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="viewAllotment">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifyAllotmentData" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="modifyAllotment">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createTotalAllotViewPage" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="beforeAllotView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewTotalAllotment.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewTotalAllotmentData" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="viewTotalAllotment">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createTotalRepairViewPage" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="beforeRepairView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewTotalRepair.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewTotalRepairData" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="viewTotalRepair">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="deptUrl" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success" type="json">
+				<param name="root">supportAdd</param>
+			</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+
+		<action name="subDeptViaAjax" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getSubDepartment">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResSubDept.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="BySubDeptViaAjax" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getSubDepartment">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResSubDept.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="ToSubDeptViaAjax" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getSubDepartment">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResSubDept.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="EmpData" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getEmpDetail">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResEmpData.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="EmpData" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getEmpDetail">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResEmpData.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="EmpMobData" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getEmpMobDetail">
+			<result name="success" type="json">
+				<param name="root">employeeDataList</param>
+			</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="barcode" class="com.Over2Cloud.ctrl.asset.AssetAction" method="createBarcodePage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/createBarcode.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="generateBarcode" class="com.Over2Cloud.ctrl.asset.AssetAction" method="generateBarcode">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/barcodeImg.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+		
+		<action name="barcodeConfiguration" class="com.Over2Cloud.ctrl.asset.AssetAction" method="barcodeConfiguration">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/createBarcode.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+		
+
+		<action name="currentColumn" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getColumn4Download">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/confirm4Download.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="downloadAction" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="downloadExcel">
+			<result name="success" type="stream">
+			<param name="contentType">application/vnd.ms-excel</param>
+			<param name="inputName">excelStream</param>
+			<param name="contentDisposition">attachment; filename="${excelFileName}"</param>
+			<param name="bufferSize">1024</param>
+			</result>
+			<result name="SENDMAILSUCCESS">/view/success.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp
+			</result>
+		</action>
+
+		<action name="uploadExcel" class="com.Over2Cloud.ctrl.asset.common.ExcelUpload" method="readExcelData">
+			<result name="astConfirm">/view/Over2Cloud/AssetOver2Cloud/Asset/confirm4Upload.jsp</result> 
+  			<result name="procConfirm">/view/Over2Cloud/AssetOver2Cloud/Asset/confirmProc4Upload.jsp</result> 
+  			<result name="suprtConfirm">/view/Over2Cloud/AssetOver2Cloud/Asset/confirmSuprt4Upload.jsp</result> 
+  			<result name="allotConfirm">/view/Over2Cloud/AssetOver2Cloud/Asset/confirmAllot4Upload.jsp</result> 
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="viewUploadExcelGridData" class="com.Over2Cloud.ctrl.asset.common.ExcelUpload" method="viewConfirmationData">
+			<result name="success" type="json"></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+		
+		<action name="saveExcelData" class="com.Over2Cloud.ctrl.asset.common.ExcelUpload" method="saveSelectData">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+		</action>
+
+		<action name="createModuleViewPage" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="beforeAllView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAllModuleData.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewAllMoudleGridData" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="viewAllModuleData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="AssetDashboardData" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getData4AssetDashboard">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetDashboard.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="createViewPage4Asset" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getColumn4Download">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAssetDashboardData.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+        
+        <action name="viewAllotmentDashboardData" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="viewData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+        
+        <action name="createAssetLifeGraph" class="com.Over2Cloud.ctrl.asset.AssetGraphAction" method="createAssetLifeGraph">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/createAssetLifeChart.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="getClickPointInfo" class="com.Over2Cloud.ctrl.asset.AssetGraphAction" method="getClickPointInfo">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewClickPointInfo.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+        
+        <action name="SLNoAvailabilty" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="isExistSLNo">
+			<result name="success" type="json">
+				<param name="root">checkSpareNo</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+    
+    	<action name="assetDashboard" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getData4AssetDashboard">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetDashboard.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	  </action>
+		
+      <action name="showAssetData"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getDataAssetDetails">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetData.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+     <action name="showAssetDataTicket"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getAssetTicketData">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetData.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+     <action name="showAsetDataGraph"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getDtaAssetDataGraph">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetDataGraph.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+	    
+	 <action name="showPerformanceRank"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getDataPerformanceRank">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetPerformanceRank.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+      <action name="showUserRank"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getDataUserRank">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetUserRank.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+       <action name="showAssetMatrixData"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getSupportGraphDueMatrix">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetDataDueMatrix.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+       <action name="assetDueMatrixSupportGraph"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getSupportGraph">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/spportGraphDueMatrix.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+      <action name="showAssetExpireGraph"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getAssetExpireGraph">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetExpireGraph.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+      <action name="showAllAssetDetails"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getAllAssetData">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetDataGrid.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+     
+     <action name="viewTotalAssetData" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="viewAssetCategory">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+     
+      <action name="showAllSupportDetails"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getAllSupportData">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/supportDataGrid.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+       
+      <action name="viewTotalSupportData" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="viewTotalSupportData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	 </action>
+		 
+      <action name="showAllrankDetails"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="getAllRankData">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetRankGrid.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+		
+     <action name="viewTotalAssetRank" class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="viewTotalAssetRank">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+ 	</action>
+		<action name="LocationAjax"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getSubLocation">
+                <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResSubLoaction.jsp</result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+       </action>
+       
+       <action name="SubLocationDetail"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getSubLocationDetails">
+                <result name="success" type="json"><param name="root">locationDetail</param></result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+      </action>
+      
+      <action name="getAllotedAssetDetails"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getAllotedAssetDetails">
+                <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ajaxResAssetDetail.jsp</result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+      </action>
+      
+      <action name="getEmployeeBydeptId"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getEmployeeBydeptId">
+                <result name="success" type="json"><param name="root">empData</param></result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+      </action>
+      
+       <action name="jsonChartDataDept"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="showBarChart">
+                 <result name="success" type="json"><param name="root">jsonArray</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+       <action name="jsonChartAssetTypeRank"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="showBarChartAssetTypeRank">
+                 <result name="success" type="json"><param name="root">jsonArrayAssetTypeRank</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      <action name="jsonChartUserTypeRank"  class="com.Over2Cloud.ctrl.asset.AssetDashboardAction" method="showBarChartAssetUserRank">
+                 <result name="success" type="json"><param name="root">jsonArrayAssetUserRank</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+      	 	 <action name="createAssetSearch"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getAssetSearch">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/assetSearchData.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+	<action name="assetDetailsForSearch" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getAssetDetailSearch" >
+      		 <result name="success" type="json"><param name="root">obj</param> </result>
+          	 <result name="error">/view/common_pages/error.jsp</result>
+          	 <result name="login">/view/common_pages/invalidSession.jsp</result>
+  </action>
+  
+   <action name="getNextEscMap" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getNextEscMap">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action>
+		
+	<action name="assetSupportDetail"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getAssetSupportDetail">
+                <result name="success" type="json"><param name="root">supportDetail</param></result>
+                <result name="error">/view/common_pages/error.jsp</result>
+                <result name="login">/view/common_pages/invalidSession.jsp</result>
+      </action>
+      
+      <action name="assetSupportAction" class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="configureSupport">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	  </action>
+	  
+	  <action name="createSupportAddPage" class="com.Over2Cloud.ctrl.asset.AssetReminder" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetSupport.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+	  
+	   <action name="getReminder"  class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="getReminder">
+	    	<result name="success" type="json"><param name="root">remndDate</param></result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+   	  </action>
+	  
+	   <action name="assetActionGridPage"  class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="assetActionGridCol">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewSupport.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action><!--
+    
+       Changes  
+	  <action name="assetActionGridPage2"  class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="assetActionGridCol">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewSearchSupportData.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+	  -->
+	  
+	  
+	  
+	  <action name="viewSupportData" class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="viewSupportData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="docDownloadAction" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="getDocDownload" >
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ConfirmDocDownload.jsp</result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+    </action>
+    
+    <action name="docDownloadAction" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="getReminderDocDownload" >
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ConfirmDocDownload.jsp</result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+    </action>
+   
+    <action name="confirmDownload" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="docDownload" >
+           <result name="success" type="stream">
+             <param name="contentType">application/octet-stream</param>
+             <param name="inputName">fileInputStream</param>
+             <param name="contentDisposition">attachment;filename=%{fileName}</param>
+             <param name="bufferSize">4096</param>  </result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+    </action>
+		
+	<action name="viewEscMatrixAction" class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="viewEscMatrixAction" >
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewEscMatrix.jsp</result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+    </action>
+		
+	  <action name="beforeTakeAction" class="com.Over2Cloud.ctrl.asset.AssetTakeAction" method="beforeTakeActionOnSupport">
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/beforeTakeActionAsset.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="takeActionOnAsset" class="com.Over2Cloud.ctrl.asset.AssetTakeAction" method="takeActionOnAssetData">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+     <!-- ACTION TAKEN THROUGH MAIL !!!!!!!!!!!!   -->
+	 
+	 <action name="beforeTakeActionFromMail" class="com.Over2Cloud.ctrl.asset.AssetTakeAction" method="beforeTakeActionByMail">
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/beforeTakeActionOnAssetByMail.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+   </action>  
+    
+   <action name="takeActionOnAssetByMail" class="com.Over2Cloud.ctrl.asset.AssetTakeAction" method="takeActionOnAssetByMail">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+   </action> 
+	
+	<action name="beforeGetReminderDetails"  class="com.Over2Cloud.ctrl.asset.AssetSupportAction" method="assetActionGridCol">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewAssetReminder.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+     </action>
+	  
+	<action name="beforeGetTotalAllot" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="beforeAllotView">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewTotalAllotment.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforeGetBreakdownDetails" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="beforeGetBreakdownDetails">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewTotalRepair.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewTotalRepair" class="com.Over2Cloud.ctrl.asset.AssetRepairAction" method="viewBreakdownDetails">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+    
+    <action name="beforeViewDepreciation" class="com.Over2Cloud.ctrl.asset.DepreciationAction" method="beforeViewDepreciation">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewDepreciation.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewDepreciation" class="com.Over2Cloud.ctrl.asset.DepreciationAction" method="ViewDepreciation">
+           <result name="success" type="json"></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforeViewAllRemainingAsset" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="getOutletDetails">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/BeforeViewAllRemainingAsset.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    
+    <action name="createViewAllRemainingAsset" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="getAssetColumn4View">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewAllRemainingAsset.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewRemainAsset" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="viewRemainAsset">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+    
+    <action name="createAllotmentPage" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="createAllotmentPage">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/CreateAssetAllotment.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="assetGroupAllotmentAction" class="com.Over2Cloud.ctrl.asset.AssetAllotmentAction" method="assetGroupAllotment">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action> 
+		
+	<action name="createCont2OutletMapping" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="beforeContactMap">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/createCont2OutletMapping.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="getUnmappedContact" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="getUnmappedContact">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewUnMapContact.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	
+	<action name="veiwUnMappedContact" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="viewUnmappedContact">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+		
+	<action name="mapContact2Outlet" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="mapContact2Outlet">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action> 	
+		
+	<action name="BeforeViewCont2OutletMapping" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="BeforeViewCont2OutletMapping">
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/viewMapContact.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	
+	<action name="viewMappedContact" class="com.Over2Cloud.ctrl.asset.Contact2OutletMapping" method="viewMappedContact">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="getAssetById" class="com.Over2Cloud.ctrl.asset.AssetHistory" method="getAssetHistoryById">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewAssetHistory.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>	
+	
+	
+	<action name="removeSessionValue" class="com.Over2Cloud.ctrl.asset.AssetHistory" method="removeSessionValue">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="getCompliantDetailById" class="com.Over2Cloud.ctrl.asset.AssetHistory" method="getCompliantDetailById">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewComplaintDetail.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="viewOutletAction" class="com.Over2Cloud.ctrl.asset.OutletAction" method="viewOutletAction">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="gridMappedEmp" class="com.Over2Cloud.ctrl.asset.OutletAction" method="getMappedEmp2Outlet">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="beforeViewAssetReminderReport" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="beforeViewAssetReminderReport">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/ViewAssetReminderReport.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+		
+	<action name="getOnloadData" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="beforeViewReminderReport" >
+           <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/reminderReportData.jsp</result>
+           <result name="error">/view/common_pages/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+    </action>
+    
+    <action name="viewReminderReport" class="com.Over2Cloud.ctrl.asset.AssetReminderReportAction" method="viewReminderReport">
+           <result name="success" type="json"></result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="showAllTicketDetails"  class="com.Over2Cloud.ctrl.asset.dashboard.AssetGridDashboardData" method="getAssetTicketDetails">
+             <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/dashboard/gridDetailDashboard.jsp</result>
+             <result name="login">/view/invalidSession.jsp</result>
+             <result name="error">/view/error.jsp</result>
+    </action>
+		
+	<action name="viewGridDataTicket" class="com.Over2Cloud.ctrl.asset.dashboard.AssetGridDashboardData" method="viewGridData">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="showAllSupportDetailsWithA4Sheet"  class="com.Over2Cloud.ctrl.asset.AssetHistory" method="showAllSupportDetailsWithA4Sheet">
+            <result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/dashboard/ViewSupportDetailsWithA4Sheet.jsp</result>
+            <result name="login">/view/invalidSession.jsp</result>
+            <result name="error">/view/error.jsp</result>
+    </action>
+	
+	<action name="getSupprotPMById" class="com.Over2Cloud.ctrl.asset.AssetHistory" method="showAllSupportDetailsWithA4Sheet">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Asset/dashboard/ViewSupportDetailsWithA4Sheet.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	<action name="getSuprtPMSessionValue" class="com.Over2Cloud.ctrl.asset.AssetHistory" method="getSuprtPMSessionValue">
+			<result name="success" type="redirectAction">
+				<param name="actionName">beforeTakeAction</param>
+				<param name="assetReminderID">%{assetReminderID}</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+	</action>
+	
+	</package>
+	
+	<package name="spare" extends="struts-default,json-default" namespace="/view/Over2Cloud/AssetOver2Cloud/Spare">
+
+		<action name="createSpareCatgAddPage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareCatgPage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/CreateSpareCatg.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareCatgAddAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="addSpareCatg">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSpareCatgViewPage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareCatgView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewSpareCategory.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewSpareCatgAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="viewSpareCategory">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifySpareCatgAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="modifySpareCategory">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSparePage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSparePage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/CreateSpare.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareAddAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="addSpareDetail">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSpareReceivePage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareReceivePage">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/CreateSpareReceive.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareAddAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="addSpareDetail">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareName" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getSpareNameByCatgId">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/ajaxResSpareName.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareReceiveAddAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="addReceiveSpare">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSpareIssuePage" class="com.Over2Cloud.ctrl.asset.common.AssetUniversalAction" method="firstActionMethod">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/CreateSpareIssue.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="nonConsumeSpareName" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getAvailSpareByCatgId">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/ajaxResSpareName.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareAvailabilty" class="com.Over2Cloud.ctrl.asset.AssetCommonAction" method="getTotalSpareAvailable">
+			<result name="success" type="json">
+				<param name="root">checkSpareNo</param>
+			</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareIssueAddAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="addIssueSpare">
+			<result name="success">/view/success.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createSpareViewPage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewSpare.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewSpareAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="viewSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifySpareAction" class="com.Over2Cloud.ctrl.asset.SpareAction" method="modifySpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createReceiveViewPage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createReceiveSpareView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewReceiveSpare.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewReceiveSpareGridData" class="com.Over2Cloud.ctrl.asset.SpareAction" method="viewReceiveSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifyReceiveSpare" class="com.Over2Cloud.ctrl.asset.SpareAction" method="modifyReceiveSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="createIssueViewPage" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createIssueSpareView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewIssueSpare.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewIssueSpareGridData" class="com.Over2Cloud.ctrl.asset.SpareAction" method="viewIssueSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="modifyIssueSpare" class="com.Over2Cloud.ctrl.asset.SpareAction" method="modifyIssueSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="spareGraph" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareGraph">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewSpareInGraph.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="getSpareInfo" class="com.Over2Cloud.ctrl.asset.SpareAction" method="createSpareInfoView">
+			<result name="success">/view/Over2Cloud/AssetOver2Cloud/Spare/viewGraphData.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+
+		<action name="viewNonConsumeSpareData" class="com.Over2Cloud.ctrl.asset.SpareAction" method="viewRemainingSpare">
+			<result name="success" type="json"></result>
+			<result name="login">/view/invalidSession.jsp</result>
+			<result name="error">/view/error.jsp</result>
+		</action>
+	
+	</package>
+
+
+
+
+</struts>
+

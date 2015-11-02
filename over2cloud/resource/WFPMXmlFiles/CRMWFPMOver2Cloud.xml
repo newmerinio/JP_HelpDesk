@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="CRM" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/CRM">
+     
+    
+      <action name="beforeCRMPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeCRMPages" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/beforeCRM.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeCRMMailPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeCRMMailPage" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/beforeGroupMail.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeCommActivityPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeCommActivityPage" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/viewCommunicationActivity.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+    	 <action name="viewModifyGroupDetails" class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="viewModifyGroupDetails" >
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/common_pages/invalidSession.jsp</result>
+   		 </action>
+     
+     <action name="fetchAllParameters"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="fetchAllParameters" >
+             <result name="success" type="json">
+             	<param name="jsonArrayIndustry">jsonArrayIndustry</param>
+             	<param name="jsonArraySource">jsonArraySource</param>
+             	<param name="jsonArrayLocation">jsonArrayLocation</param>
+             	<param name="jsonArrayAccMgr">jsonArrayAccMgr</param>
+             	<param name="jsonArraydepartment">jsonArraydepartment</param>
+             	<param name="jsonArrayDesignation">jsonArrayDesignation</param>
+             	<param name="jsonArrayAllergic">jsonArrayAllergic</param>
+             </result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeFetchCRMDataView"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeFetchCRMDataView" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/CRMDataView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="viewCRMData"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="viewCRMData" >
+             <result name="success" type="json"></result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeSendPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeSendPage" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/sendPage.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforecreateGroupPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="createCRMGruop" >
+             <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchTemplate"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="fetchTemplate" >
+             <result name="success" type="json"><param name="templateJSONArray">templateJSONArray</param> </result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="templateSubmission"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="templateSubmission" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/templateForm.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="fetchMessage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="fetchMessage" >
+             <result name="success" type="json"><param name="messageName">messageName</param></result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="insertDataInstantMsg"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="insertDataInstantMsg" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/confirmPage.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="sendMessage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="sendMessage" >
+             <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+    <action name="beforeCRMGroupPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeCRMPages" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/beforeCRMGroup.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <action name="beforeViewSummaryReport"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeSummaryReport" >
+             <result name="success">/view/Over2Cloud/WFPM/summaryReport/summaryReport.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeUserActionHistoryView" class="com.Over2Cloud.ctrl.wfpm.crm.UserActionHistory"
+			method="beforeUserActionHistoryView">
+			<result name="success">/view/Over2Cloud/WFPM/History/userActionHistory.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		<action name="showuserHistoryData" class="com.Over2Cloud.ctrl.wfpm.crm.UserActionHistory"
+			method="showUserHistoryData">
+			<result name="success">/view/Over2Cloud/WFPM/History/viewUserHistory.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		<action name="viewUserHistoryGrid" class="com.Over2Cloud.ctrl.wfpm.crm.UserActionHistory"
+			method="viewUserHistoryGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+			<action name="userActionHistoryViewData" class="com.Over2Cloud.ctrl.wfpm.crm.UserActionHistory"
+			method="userActionHistoryViewData">
+			<result name="success">/view/Over2Cloud/WFPM/History/viewUserHistoryData.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+	    
+	    <action name="beforeCRMGroupDetailsView"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeCRMGroupDetailsView" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/groupdetailsView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     
+     	 <action name="viewCRMGroupDataGrid"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="viewCRMGroupDataGrid" >
+             <result name="success" type="json"></result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	 <action name="viewMailGroupDataGrid"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="viewMailGroupDataGrid" >
+             <result name="success" type="json"></result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="viewGroupCountDetails"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="viewGroupCountDetails">
+             <result name="success">/view/Over2Cloud/WFPM/CRM/groupDataOnCountView.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	 <action name="beforeMailSendPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeMailSendPage" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/sendMailPage.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="beforeMailSendPage1"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" 
+     			method="beforeMailSendPage1" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/sendMailPage1.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="urlBeforemailSend" class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="urlBeforemailSend">
+			<result name="success">/view/Over2Cloud/WFPM/CRM/mailCRMConfirmation.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+		</action>
+		<action name="insertConfirmedMailData"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="insertConfirmedMailData" >
+			 <result name="success">/view/success.jsp</result>
+			 <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+		</action>
+    
+    	<action name="insertMailData"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="insertMailData" >
+			 <result name="success">/view/success.jsp</result>
+			 <result name="error">/view/error.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+		</action>
+    
+     <action name="beforeMailTagPage"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeMailTagPage" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/viewMailTag.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="showMailTagData" class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication"
+			method="showMailTagData">
+			<result name="success">/view/Over2Cloud/WFPM/CRM/viewsearchMailTag.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		<action name="viewMailTagDataGrid" class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication"
+			method="viewMailTagDataGrid">
+			<result name="success" type="json"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		
+		   <action name="beforeAddMailTagData"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeAddMailTagData" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/addMailTag.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     	<action name="addMailTagData"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="addMailTagData" >
+              <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+		
+		 <action name="loadMailTagData" class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication"
+			method="loadMailTagData">
+			<result name="success">/view/Over2Cloud/WFPM/CRM/loadMailTag.jsp</result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+		</action>
+		<action name="beforeMailEditor"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="beforeMailEditor" >
+             <result name="success">/view/Over2Cloud/WFPM/CRM/mailEditor.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+     	
+     		<action name="addcomposedmailtext"  class="com.Over2Cloud.ctrl.wfpm.crm.CRMCommunication" method="addComposedMailtext" >
+              <result name="success">/view/success.jsp</result>
+			 <result name="login">/view/invalidSession.jsp</result>
+     	</action>
+		
+</package>
+</struts>

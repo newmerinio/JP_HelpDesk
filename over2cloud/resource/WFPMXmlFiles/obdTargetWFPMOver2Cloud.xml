@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="obdTarget" extends="struts-default,json-default" namespace="/view/Over2Cloud/wfpm/target">
+	     
+      <action name="beforeOBDTarget"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="beforeOBDTargetView">
+             <result name="success">/view/Over2Cloud/WFPM/target/viewOBDTarget.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewOBDTarget"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="getOBDTargetView">
+             <result name="success" type='json'></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeConfigOBDTarget"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="beforeAddConfigOBDTarget">
+             <result name="success">/view/Over2Cloud/WFPM/target/addOBDTarget.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="allotTarget"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="beforeAddConfigOBDTarget">
+             <result name="success">/view/Over2Cloud/WFPM/target/selectEmpForOBDTarget.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="addOBDConfiguration"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="addConfigOBDTarget">
+             <result name="success">/view/success.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="targetByEmp"  class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="getTargetByEmp">
+             <result name="success" type='json'><param name="root">jsonData</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="currentColumn" class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="getColumn4Download">
+            <result name="success">/view/Over2Cloud/WFPM/target/confirm4Download.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="showColumnExcel" class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="getColumnForDownload">
+            <result name="success">/view/Over2Cloud/WFPM/target/confirmForDownload.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="downloadAction" class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="downloadExcel">
+			<result name="success" type="stream"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+	</action>
+	
+	<action name="downloadExcelAction" class="com.Over2Cloud.ctrl.wfpm.target.OBDTargetActionControl" method="downloadExcelAction">
+			<result name="success" type="stream"></result>
+			<result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp
+			</result>
+	</action>
+	
+     <action name="excelUpload">
+            <result name="success">/view/Over2Cloud/WFPM/target/excelUpload.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="uploadOBDTarget" class="com.Over2Cloud.ctrl.wfpm.excel.Excel_Upload_Download" method="uploadOBDTarget">
+			<result name="success">/view/success.jsp</result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	</action>
+     
+     <action name="viewUploadExcelGridData" class="com.Over2Cloud.ctrl.wfpm.excel.Excel_Upload_Download" method="getUploadExcelGridData">
+			<result name="success" type='json'></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	</action>
+	
+	<action name="saveExcelData" class="com.Over2Cloud.ctrl.wfpm.excel.Excel_Upload_Download" method="getUploadExcelGridData">
+			<result name="success" type='json'></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	</action>
+	
+	<action name="editOBDTarget" class="com.Over2Cloud.ctrl.wfpm.excel.Excel_Upload_Download" method="editOBDTargetRecords">
+			<result name="success" type='json'></result>
+			<result name="error">/view/common_pages/error.jsp</result>
+			<result name="login">/view/common_pages/invalidSession.jsp</result>
+	</action>
+	
+	 <action name="targetExcelUpload">
+            <result name="success">/view/Over2Cloud/WFPM/target/targetExcelUpload.jsp</result>
+            <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+	</package>
+</struts>

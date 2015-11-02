@@ -1,0 +1,10 @@
+1. Table 'leadgeneration' field 'status' defines the stage of a lead where-
+   0 New Lead
+   1 Prospective Client
+   2 Prospective Associate
+   3 Snoozed Lead
+   4 Lost Lead
+   	
+
+
+

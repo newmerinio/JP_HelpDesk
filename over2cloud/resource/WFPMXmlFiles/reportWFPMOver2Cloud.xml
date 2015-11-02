@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="wfpmReport" extends="struts-default,json-default" namespace="/view/Over2Cloud/WFPM/report/DSR">
+     
+     
+     <action name="beforeDSRView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/dsrGrid.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+	<action name="dsrRecords"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="fullAchievmentReport"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getFullAchievmentReport">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/fullAchievmentReport.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="currentmonth"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getCurrentMonthDropdown">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/currentmonthdropdown.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="dailyReportEdit"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="editDailySalesReport">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeHierarchyView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="beforeHierarchyView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/hierarchyView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeIVRSView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="beforeIVRSReportView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/ivrsReport.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="ivrsRecords"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getIVRSReport">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="hierarchyDSRRecords"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="hierarchyDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="subHierarchyDSRRecords"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getSubHierarchyDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewDSRByUser"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="showDSRGrid">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/dsrByUser.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="dSRByUser"  class="com.Over2Cloud.ctrl.wfpm.report.HierarchyViewReport" method="getDSRByUser">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforeOfferingWise"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingWiseReport">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/offeringWiseDSR.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="offeringDsrRecords"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingWiseReport" method="getOfferingDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="offeringDSR"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingWiseReport" method="updateOfferingDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="editKPIDSR"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="updateKPIDSRRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforeDashboardView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/reportDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="jsonChartData"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getJsonChartData">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeDashboardView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getDSRRecords">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/reportDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeDSRHistory"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="beforeIVRSHistoryView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/dsrHistoryReport.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="dsrHistoryRecords"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" method="getDSRHistoryRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+ 	<action name="offeringDsrGraph"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingWiseReport" method="getOfferingDSRRecords">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/offeringGraph.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Anoop 3-1-2014, KPI Report -->
+	<action name="beforeKPIMainPage" class="com.Over2Cloud.ctrl.wfpm.userHierarchy.UserHierarchyAction" 
+     		 method="beforeUserHierarchy">
+		<result name="success">/view/Over2Cloud/WFPM/report/KPIReport/KPIReportMainPage.jsp</result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="beforeKPIReportView" class="com.Over2Cloud.ctrl.wfpm.report.KPIReportAction">
+		<result name="success">/view/Over2Cloud/WFPM/report/KPIReport/KPIReport.jsp</result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="viewAchievement" class="com.Over2Cloud.ctrl.wfpm.report.KPIReportAction"
+			method="viewAchievement">
+		<result name="success" type="json"></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="viewKPIAchievement" class="com.Over2Cloud.ctrl.wfpm.report.KPIReportAction"
+			method="viewKPIAchievement">
+		<result name="success" type="json"></result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	
+     <action name="ivrsRecordDetailsData"  class="com.Over2Cloud.ctrl.wfpm.report.DSRActionControl" 
+     		 method="ivrsRecordDetailsData">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     <action name="beforeIVRSMainPage" class="com.Over2Cloud.ctrl.wfpm.userHierarchy.UserHierarchyAction" 
+     		 method="beforeUserHierarchy">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/ivrsReportMainPage.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <!-- Anoop 13-1-2014, Offering Report -->
+	<action name="beforeOfferingMainPage" class="com.Over2Cloud.ctrl.wfpm.userHierarchy.UserHierarchyAction" 
+     		method="beforeUserHierarchy">
+		<result name="success">/view/Over2Cloud/WFPM/report/OfferingRepot/OfferingReportMainPage.jsp</result>
+		<result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+	</action>
+	<action name="beforeOfferingReportView" class="com.Over2Cloud.ctrl.wfpm.report.OfferingReportAction">
+	        <result name="success">/view/Over2Cloud/WFPM/report/OfferingRepot/OfferingReport.jsp</result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="viewOfferingAchievement" class="com.Over2Cloud.ctrl.wfpm.report.OfferingReportAction"
+			method="viewOfferingAchievement">
+	        <result name="success" type="json"></result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+	<action name="viewOfferingAchievementDetails" class="com.Over2Cloud.ctrl.wfpm.report.OfferingReportAction"
+			method="viewOfferingAchievementDetails">
+	        <result name="success" type="json"></result>
+	        <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+    </action>
+    
+    <!-- Anurag 14-01-2014 Graph -->
+    
+    <!-- Graph View -->
+     <action name="beforeDashboardView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRGraphActionControl" method="beforeDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/reportDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="jsonChartData"  class="com.Over2Cloud.ctrl.wfpm.report.DSRGraphActionControl" method="getJsonChartData">
+             <result name="success" type="json"><param name="root">jsonArray</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="offeringDashboardView"  class="com.Over2Cloud.ctrl.wfpm.report.DSRGraphActionControl" method="beforeOfferingDashboardView">
+             <result name="success">/view/Over2Cloud/WFPM/report/DSR/offeringReportDashboard.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="offeringJsonChartData"  class="com.Over2Cloud.ctrl.wfpm.report.DSRGraphActionControl" method="getOfferingJsonChartData">
+             <result name="success" type="json"><param name="root">jsonArray</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+
+<!-- Karnika Work for KPI and Offering -->
+      <action name="beforeKPIAutofill"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" >
+             <result name="success">/view/Over2Cloud/WFPM/report/KPIAutoFill/kpiGrid.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="kpiRecords"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="getKPIRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="kpiAutofillGraph"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="showBarChartKpiFill">
+                 <result name="success" type="json"><param name="root">jsonArrayKPI</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+    
+       <action name="showGraph"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="beforeKPIGraph">
+             <result name="success">/view/Over2Cloud/WFPM/report/KPIAutoFill/kpiDataBar.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="kpiAutofillGraphPerKpi"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="kpiAutofillGraphPerKpiShow">
+                 <result name="success" type="json"><param name="root">jsonArrayKPI</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+     
+      <action name="beforeOfferingAutofill"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" >
+             <result name="success">/view/Over2Cloud/WFPM/report/OfferingAutoFill/offeringGrid.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="offeringRecords"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="getOfferingRecords">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="beforeKPIDataView"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="beforeKPIDataView">
+             <result name="success">/view/Over2Cloud/WFPM/report/KPIAutoFill/beforeKPIDataView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+   
+      <action name="kpiRecordViewData"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" method="kpiRecordViewData">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="showGraphOffering"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="beforeOfferingGraph">
+             <result name="success">/view/Over2Cloud/WFPM/report/OfferingAutoFill/offeringDataBar.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="offeringAutofillGraph"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="showBarChartOfferingFill">
+                 <result name="success" type="json"><param name="root">jsonArrayOffering</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+       <action name="offeringAutofillGraphPerOffering"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="offeringAutofillGraphPerOfferingShow">
+                 <result name="success" type="json"><param name="root">jsonArrayOffering</param></result>
+				 <result name="error">/view/error.jsp</result>
+				 <result name="login">/view/invalidSession.jsp</result>
+      </action>
+      
+       <action name="beforeOfferingDataView"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="beforeOfferingDataView">
+             <result name="success">/view/Over2Cloud/WFPM/report/OfferingAutoFill/beforeOfferingDataView.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="offeringRecordViewData"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="offeringRecordViewData">
+             <result name="success" type="json"></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchAchievedKPIForMonth"  class="com.Over2Cloud.ctrl.wfpm.report.KPIAutoFillReportAction" 
+      			 method="fetchAchievedKPIForMonth">
+             <result name="success" type="json"><param name="jsonArrayKPI">jsonArrayKPI</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="fetchAchievedOfferingForMonth"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" 
+      			 method="fetchAchievedOfferingForMonth">
+             <result name="success" type="json"><param name="jsonArrayOffering">jsonArrayOffering</param></result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+      <action name="beforeopportunityreportView"  class="com.Over2Cloud.ctrl.wfpm.report.OfferingAutoFillReportAction" method="beforeOpportunityReportView">
+             <result name="success">/view/Over2Cloud/WFPM/report/Opportunity/opportunityreport.jsp</result>
+             <result name="error">/view/error.jsp</result>
+			<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="beforinstantcrmmailreport" class="com.Over2Cloud.ctrl.communication.instantmail.InstantmailAction" method="beforinstantmailreportviewCRM">
+	  <result name="success">/view/Over2Cloud/WFPM/report/CRMReport/mailReports.jsp</result>
+	  <result name="error">/view/error.jsp</result>
+	  <result name="login">/view/invalidSession.jsp</result>
+	</action>
+     
+      <action name="beforsearchcrmmailreport" class="com.Over2Cloud.ctrl.communication.instantmail.InstantmailAction" method="beforinstantmailreportviewCRM">
+	  <result name="success">/view/Over2Cloud/WFPM/report/CRMReport/searchmailreportsview.jsp</result>
+	  <result name="error">/view/error.jsp</result>
+	  <result name="login">/view/invalidSession.jsp</result>
+	</action>
+	
+	<action name="instantmailreporturl" class="com.Over2Cloud.ctrl.communication.instantmail.InstantmailAction" method="viewmailDataGridCRM">
+    <result name="success" type="json"></result>
+      <result name="error">/view/error.jsp</result>
+      <result name="login" >/view/invalidSession.jsp</result>
+</action>
+	
+     
+</package>
+</struts>
+

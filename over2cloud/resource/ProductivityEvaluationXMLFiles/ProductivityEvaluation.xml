@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+<package name="productivityEvaluation" extends="struts-default,json-default" namespace="/view/Over2Cloud/ProductivityEvaluationOver2Cloud">
+
+     <action name="getKaizenPage"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="beforeKaizenPage">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/Kaizan/createKaizan.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+	
+	 <action name="getPlantName" class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="getPlantName">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+   
+     <action name="kaizenAddAction" class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="kaizenAddData">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+   
+     <action name="viewKaizenPage"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="viewKaizenPage">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/Kaizan/viewKaizen.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewKaizenData"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="viewKaizenData">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+	
+	 <action name="getReviewNames" class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="getReviewNames">
+          <result name="success" type="json"><param name="root">jsonArr</param> </result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+     <action name="getImprovementPage"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="beforeImprovedPage">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/ImprovedDash/createImproveddash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+	
+     <action name="actionAddImproved" class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="addImprovedActionData">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+    </action>
+   
+     <action name="beforeTakeAction"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="beforeTakeAction">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/Kaizan/takeActionKaizen.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="takeActionKaizen" class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationKaizenAction" method="kaizenTakeAction">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+   
+     <action name="getImprovementPageView"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationImprovedAction" method="beforeImprovedPageView">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/ImprovedDash/viewImproveddash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewImprovedData"  class="com.Over2Cloud.ctrl.productivityEvaluation.ProductivityEvaluationImprovedAction" method="viewImprovedData">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getCMOCommunicationFiels"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="getCMOCommunicationFiels">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/CMOCommunication/createCMOCommunication.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getCMOCommunicationFielsSpecial"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="getCMOCommunicationFielsSpecial">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/CMOCommunication/createCMOCommunicationSpecial.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="cmoAddAction" class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="cmoAddActionData">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="cmoSpecialAddAction" class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="cmoSpecialAddActionData">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="getCMOCommunicationFielsView"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="getCMOCommunicationFielsView">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/CMOCommunication/viewCMOCommunication.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewCMOCommunicationData"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="viewCMOCommunicationData">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+      </action>
+    
+     <action name="getCMOCommunicationFielsSpecialView"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="getCMOCommunicationFielsView">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/CMOCommunication/viewCMOCommunicationSpecial.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="viewCMOCommunicationDataSpecial"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOCommunicationActionControl" method="viewCMOCommunicationDataSpecial">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+    
+     <action name="beforeTakeActionSpecial"  class="com.Over2Cloud.ctrl.productivityEvaluation.CMOTakeAction" method="beforeTakeAction">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/CMOCommunication/cmoTakeAction.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="takeActionCMOSpecial" class="com.Over2Cloud.ctrl.productivityEvaluation.CMOTakeAction" method="takeActionCMO">
+           <result name="success">/view/success.jsp</result>
+           <result name="error" >/view/error.jsp</result>
+           <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeDashboardKaizen"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="beforeDashboardKaizen">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/kaizenBestPracticesdash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeDashboardImproved"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="beforeDashboardImproved">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/improvedDevelopementDash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="beforeDashboardReviewDates"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="beforeDashboardReviewDates">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/reviewDatesDash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+      <action name="beforeDashboardOperationalBSC"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="beforeDashboardOperationalBSC">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/operationalBSCDash.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+       <action name="beforeDashboardMain"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="beforeDashboardMain">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/productivityDashboard.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     
+     <action name="viewOGTaskDash"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="viewOGTaskDash">
+          <result name="success">/view/Over2Cloud/ProductivityEvaluation/dashboardPages/viewOGTaskDashGrid.jsp</result>
+		  <result name="error">/view/error.jsp</result>
+		  <result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+     <action name="viewOGTaskGridData"  class="com.Over2Cloud.ctrl.productivityEvaluation.dashboard.ProductivityDashboardAction" method="viewOGTaskGridData">
+    	<result name="success" type="json"></result>
+        <result name="error">/view/error.jsp</result>
+		<result name="login">/view/invalidSession.jsp</result>
+     </action>
+     
+</package>
+ </struts>
